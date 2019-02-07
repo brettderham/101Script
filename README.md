@@ -12,7 +12,9 @@ Repo for Riley Persily, Thomas Ochsner, Simon Wroblewski, Kea Braekman, and Bret
 
 ## Examples
 
-### Comments
-```
-HERE'S A COMMENT :)
-```
+### Alternative Operations
+There are two ways to write most operations: The typical symbol and a simplified string representation of the operation.  (Shown below)
+#### Method A
+![MethodA](https://github.com/brettderham/101Script/blob/master/resources/changeMaker101a.png "Method A")
+#### Method B
+![MethodB](https://github.com/brettderham/101Script/blob/master/resources/changeMaker101b.png "Method B")
