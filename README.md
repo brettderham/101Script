@@ -10,6 +10,9 @@ Repo for Riley Persily, Thomas Ochsner, Simon Wroblewski, Kea Braekman, and Bret
 * `.IOI` file extension
 * Weakly & Dynamically Typed
 * Multiple names/ways to use basic operations
+* Type inference
+* Simple loops (`for` and `while`)
+* Semi-colon not required after every line
 
 ## Examples
 
@@ -72,9 +75,9 @@ multipliedBy    *=
 subtractedFrom  -=
 ```
 
-piEstimate 101Script:  
+**piEstimate 101Script:**  
 ![101pi](https://github.com/brettderham/101Script/blob/master/resources/pie101.png "101pi")  
-piEstimate JS:  
+**piEstimate JS:**  
 ![jspi](https://github.com/brettderham/101Script/blob/master/resources/pieJS.png "jspi")  
 
 ### Alternative Operations
