@@ -31,10 +31,11 @@ y = 5 + 3 - 2					let y = 5 + 3 - 2
 ```
 if(x > 5):						if(x > 5) {
 	print(x);						console.log(x)
-else if(x < 3):					      }else if(x < 3) {
+else if(x < 3):					        } else if(x < 3) {
 	print(y);						console.log(y)
-else:							}else {
+else:							} else {
 	print(z);						console.log(z);
+                                }
 ```
 
 ```
@@ -47,7 +48,7 @@ loop(5):                    while(x < 5) {
 
 ```
 y = 0                       let y = 0
-loopWhile(y < 8):            while(y < 8) {
+loopWhile(y < 8):           while(y < 8) {
     f(y);                       f(y)
                             }
 ```
@@ -63,7 +64,7 @@ Shape =:						let shape = {
 	name = "circle",				name: "circle",
 	radius = 3;					radius: 3
 								}
-print(Shape.name)				console.print(Shape.name)
+print(Shape.name)				console.log(Shape.name)
 
 ```
 
@@ -86,7 +87,7 @@ dividedFrom     /=
 
 equals          ==
 
-notEquals	   !=
+notEquals	    !=
 
 gets		    =
 
@@ -96,9 +97,9 @@ greaterThan     >
 
 lessOrEq	    <=
 
-greaterOrEq	 >=
+greaterOrEq	    >=
 
-or	          ||
+or	            ||
 ```
 
 #### Method A
