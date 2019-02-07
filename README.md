@@ -73,6 +73,24 @@ addedTo         +=
 multipliedBy    *=
 
 subtractedFrom  -=
+
+dividedFrom     /=
+
+equals          ==
+
+notEequals		!=
+
+gets			=
+
+lessThan		<
+
+greaterThan		>
+
+lessOrEq		<=
+
+greaterOrEq		>=
+
+or				||
 ```
 
 **piEstimate 101Script:**  
