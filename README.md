@@ -35,7 +35,7 @@ else if(x < 3):					        } else if(x < 3) {
 	print(y);						console.log(y)
 else:							} else {
 	print(z);						console.log(z);
-                                }
+                                			}
 ```
 
 ```
@@ -55,7 +55,7 @@ loopWhile(y < 8):           while(y < 8) {
 
 ```
 function multiplyByThree(x):		function multiplyByThree(x) {
-	return x * 3;						return x*3
+	return x * 3;				return x*3
 									}
 ```
 
@@ -63,8 +63,8 @@ function multiplyByThree(x):		function multiplyByThree(x) {
 Shape =:						let shape = {
 	name = "circle",				name: "circle",
 	radius = 3;					radius: 3
-								}
-print(Shape.name)				console.log(Shape.name)
+							}
+	print(Shape.name)				console.log(Shape.name)
 
 ```
 
