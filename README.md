@@ -28,7 +28,7 @@ y = 5 + 3 - 2					let y = 5 + 3 - 2
 ```
 if(x > 5):						if(x > 5) {
 	print(x);						console.log(x)
-else if(x < 3):					}else if(x < 3) {
+else if(x < 3):					      }else if(x < 3) {
 	print(y);						console.log(y)
 else:							}else {
 	print(z);						console.log(z);
