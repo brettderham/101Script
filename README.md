@@ -21,7 +21,7 @@ sexy = true                     let sexy = true
 ```
 
 ```
-x = (10*(3^2))/2				let x = (10*((3 ** 2))/2
+x = 10 * (3^2) /2				let x = (10*((3 ** 2))/2
 y = 5 + 3 - 2					let y = 5 + 3 - 2
 ```
 
@@ -35,10 +35,10 @@ else:							}else {
 ```
 
 ```
-x = 0                       let x = 0
-loop(5):                    while(x < 5) {
-    x++                         x++
-    print(x);                   console.log(x)
+x = 0                       
+loop(5):                    for(x = 0; x < 5; x++) {
+    x++                        console.log(x)
+    print(x);                  
                             }
 ```
 
@@ -57,7 +57,7 @@ function multiplyByThree(x):		function multiplyByThree(x) {
 
 ```
 Shape =:						let shape = {
-	name = "circle",				name: "circle",
+	name = "circle",		    name: "circle",
 	radius = 3;					radius: 3
 								}
 print(Shape.name)				console.print(Shape.name)
