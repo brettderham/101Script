@@ -9,8 +9,68 @@ Repo for Riley Persily, Thomas Ochsner, Simon Wroblewski, Kea Braekman, and Bret
 ## Features
 * `.IOI` file extension
 * Weakly & Dynamically Typed
+* Multiple names/ways to use basic operations
 
 ## Examples
+
+
+```
+name = "Thomas"                 let name = "Thomas"
+age = 21                        let age = 21
+sexy = true                     let sexy = true
+```
+
+```
+x = (10*(3^2))/2				let x = (10*((3 ** 2))/2
+y = 5 + 3 - 2					let y = 5 + 3 - 2
+```
+
+```
+if(x > 5):						if(x > 5) {
+	print(x);						console.log(x)
+else if(x < 3):					}else if(x < 3) {
+	print(y);						console.log(y)
+else:							}else {
+	print(z);						console.log(z);
+```
+
+```
+x = 0                       let x = 0
+loop(5):                    while(x < 5) {
+    x++                         x++
+    print(x);                   console.log(x)
+                            }
+```
+
+```
+y = 0                       let y = 0
+loopWhile(y < 8):            while(y < 8) {
+    f(y);                       f(y)
+                            }
+```
+
+```
+function multiplyByThree(x):		function multiplyByThree(x) {
+	return x * 3;						return x*3
+									}
+```
+
+```
+Shape =:						let shape = {
+	name = "circle",				name: "circle",
+	radius = 3;					radius: 3
+								}
+print(Shape.name)				console.print(Shape.name)
+								
+```
+
+```
+addedTo         +=
+
+multipliedBy    *=
+
+subtractedFrom  -=
+```
 
 ### Alternative Operations
 There are two ways to write most operations: The typical symbol and a simplified string representation of the operation.  (Shown below)
