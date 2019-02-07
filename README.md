@@ -78,19 +78,19 @@ dividedFrom     /=
 
 equals          ==
 
-notEequals		!=
+notEquals		    !=
 
-gets			=
+gets			      =
 
-lessThan		<
+lessThan		    <
 
-greaterThan		>
+greaterThan		  >
 
-lessOrEq		<=
+lessOrEq		    <=
 
-greaterOrEq		>=
+greaterOrEq		  >=
 
-or				||
+or				      ||
 ```
 
 **piEstimate 101Script:**  
