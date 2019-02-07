@@ -67,6 +67,14 @@ print(Shape.name)				console.print(Shape.name)
 
 ```
 
+**piEstimate 101Script:**  
+![101pi](https://github.com/brettderham/101Script/blob/master/resources/pie101.png "101pi")  
+**piEstimate JS:**  
+![jspi](https://github.com/brettderham/101Script/blob/master/resources/pieJS.png "jspi")  
+
+### Alternative Operations
+There are two ways to write most operations: The typical symbol and a simplified string representation of the operation.  (Shown below)
+
 ```
 addedTo         +=
 
@@ -78,28 +86,21 @@ dividedFrom     /=
 
 equals          ==
 
-notEquals		    !=
+notEquals	   !=
 
-gets			      =
+gets		    =
 
-lessThan		    <
+lessThan        <
 
-greaterThan		  >
+greaterThan     >
 
-lessOrEq		    <=
+lessOrEq	    <=
 
-greaterOrEq		  >=
+greaterOrEq	 >=
 
-or				      ||
+or	          ||
 ```
 
-**piEstimate 101Script:**  
-![101pi](https://github.com/brettderham/101Script/blob/master/resources/pie101.png "101pi")  
-**piEstimate JS:**  
-![jspi](https://github.com/brettderham/101Script/blob/master/resources/pieJS.png "jspi")  
-
-### Alternative Operations
-There are two ways to write most operations: The typical symbol and a simplified string representation of the operation.  (Shown below)
 #### Method A
 ![MethodA](https://github.com/brettderham/101Script/blob/master/resources/changeMaker101a.png "Method A")
 #### Method B
