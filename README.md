@@ -1,3 +1,4 @@
+![101Script](resources\101script-logo.jpg "101Script")
 # 101Script
 A programming language for beginners
 
