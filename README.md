@@ -84,7 +84,7 @@ Shape =:                        let shape = {
     name = "circle",            name: "circle",
     radius = 3;                 radius: 3
                                 }
-    print(Shape.name)				console.log(Shape.name)
+    print(Shape.name)           console.log(Shape.name)
 
 ```
 
@@ -119,6 +119,8 @@ greaterThan     >
 lessOrEq        <=
 
 greaterOrEq     >=
+
+remainder       %
 ```
 
 #### ChangeMaker Using Symbols

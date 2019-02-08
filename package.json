@@ -4,7 +4,7 @@
   "description": "A simple programming language.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha test/**/*test.js"
   },
   "repository": {
     "type": "git",
