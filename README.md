@@ -97,6 +97,11 @@ Shape =:                        let shape = {
 
 There are two ways to write most operations: The typical symbol and a simplified string representation of the operation.  (Shown below)
 
+<<<<<<< HEAD
+=======
+#### List of Alternative Operations
+
+>>>>>>> 5bd3a63f1dbac5acdd933632ec8565edc5f9fb9e
 ```
 addedTo         +=
 
@@ -121,10 +126,10 @@ lessOrEq        <=
 greaterOrEq     >=
 ```
 
-#### Method A
+#### ChangeMaker Using Symbols
 
-![MethodA](https://github.com/brettderham/101Script/blob/master/resources/changeMaker101a.png "Method A")
+![SymbolMethod](https://github.com/brettderham/101Script/blob/master/resources/changeMaker101a.png "Symbol Method")
 
-#### Method B
+#### ChangeMaker Using String Representation
 
-![MethodB](https://github.com/brettderham/101Script/blob/master/resources/changeMaker101b.png "Method B")
+![StringMethod](https://github.com/brettderham/101Script/blob/master/resources/changeMaker101b.png "String Method")

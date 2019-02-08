@@ -1,0 +1,25 @@
+{
+  "name": "101script",
+  "version": "1.0.0",
+  "description": "A simple programming language.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brettderham/101Script.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brettderham/101Script/issues"
+  },
+  "homepage": "https://github.com/brettderham/101Script#readme",
+  "devDependencies": {
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "mocha": "^5.2.0"
+  }
+}
