@@ -97,11 +97,6 @@ Shape =:                        let shape = {
 
 There are two ways to write most operations: The typical symbol and a simplified string representation of the operation.  (Shown below)
 
-<<<<<<< HEAD
-=======
-#### List of Alternative Operations
-
->>>>>>> 5bd3a63f1dbac5acdd933632ec8565edc5f9fb9e
 ```
 addedTo         +=
 
