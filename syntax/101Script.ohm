@@ -44,7 +44,7 @@
   Arg         =  (id ":")? Exp
   Args        =  ListOf<Arg, ",">
 
-  keyword     =  ("while" | "if" | "elif" | "else" | "def" | "let" | "return"
+  keyword     =  ("while" | "if" | "else" | "function" | "let" | "return"
               |  "break" | "and" | "or" | "not" | "true" | "false") ~idrest
   id          =  ~keyword ("_" | letter) idrest*
   idrest      =  "_" | alnum

@@ -23,17 +23,20 @@ Repo for Riley Persily, Thomas Ochsner, Simon Wroblewski, Kea Braekman, and Bret
 ## Examples
 
 
+### Variable Declarations
 ```
 name = "Thomas"                 let name = "Thomas"
 age = 21                        let age = 21
 sexy = true                     let sexy = true
 ```
 
+### Arithmetic
 ```
 x = (10*(3^2))/2                let x = (10*((3 ** 2))/2
 y = 5 + 3 - 2                   let y = 5 + 3 - 2
 ```
 
+### If Statements 
 ```
 if(x > 5):                      if(x > 5) {
 	print(x);						console.log(x)
@@ -44,6 +47,7 @@ else:                           } else {
                                             }
 ```
 
+### Basic Loop Statements
 ```
 x = 0                       let x = 0
 loop(5):                    while(x < 5) {
@@ -52,6 +56,7 @@ loop(5):                    while(x < 5) {
                             }
 ```
 
+### While Statements
 ```
 y = 0                       let y = 0
 loopWhile(y < 8):           while(y < 8) {
@@ -59,12 +64,21 @@ loopWhile(y < 8):           while(y < 8) {
                             }
 ```
 
+### Functions 
 ```
 function multiplyByThree(x):        function multiplyByThree(x) {
     return x * 3;                       return x*3
                                     }
 ```
 
+### Comments
+```
+// single line					// single line
+/* multiple						/* multiple
+   lines */						   lines */
+```
+
+### Objects
 ```
 Shape =:                        let shape = {
     name = "circle",            name: "circle",
@@ -83,6 +97,7 @@ Shape =:                        let shape = {
 
 There are two ways to write most operations: The typical symbol and a simplified string representation of the operation.  (Shown below)
 
+### Alternative Operations
 ```
 addedTo         +=
 
@@ -105,8 +120,6 @@ greaterThan     >
 lessOrEq        <=
 
 greaterOrEq     >=
-
-or              ||
 ```
 
 #### Method A
