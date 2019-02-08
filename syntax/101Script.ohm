@@ -1,6 +1,6 @@
-101Script {
+IOIScript {
   Program     =  newline* Block newline*
-  Block       =  (Stmt)+
+  Block       =  (Stmt | SimpleStmt | newline )+
   Stmt        =  SimpleStmt newline                      -- simple
               |  "loopWhile" "(" Exp ")" ":" Block ";"   -- while
               |  "loop" "(" Exp ")" ":" Block ";"        -- loop
@@ -41,7 +41,7 @@
   VarExps     =  NonemptyListOf<VarExp, ",">
   Param       =  id ("=" Exp)?
   Params      =  ListOf<Param, ",">
-  Arg         =  (id ":")? Exp        ****
+  Arg         =  (id ":")? Exp
   Args        =  ListOf<Arg, ",">
 
   keyword     =  ("loopWhile" | "if" | "else" | "else" | "function" | "return" | "print"
@@ -57,13 +57,10 @@
   addop       =  "+" | "-" | "addedTo" | "subtractedFrom"
   relop       =  "<=" | "<" | "==" | "!=" | ">=" | ">" 
               |  "lessOrEq" | "lessThan" | "equals" | "notEqual" | "greaterOrEq" | "greaterThan"
-  mulop       =  "*" | "/" | "%" | "multipliedTo" | "dividedFrom" | "remainder"
+  mulop       =  "*" | "/" | "%" | "^" | "multipliedTo" | "dividedFrom" | "remainder"
   prefixop    =  "-" | "not"
   
   newline     =  "\n"+
   space      :=  " " | "\t" | comment
-  comment     =  "--" ~"--" (~newLine ~"--" any)*      -- comment
-                     | multiLineComment
-
-  multiLineComment   = "-*" (~"--" any)* "*-"
+  comment     =  "--" ~"--" (~newline ~"--" any)*      -- comment
 }
