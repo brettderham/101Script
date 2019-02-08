@@ -73,9 +73,9 @@ function multiplyByThree(x):        function multiplyByThree(x) {
 
 ### Comments
 ```
-// single line					// single line
-/* multiple						/* multiple
-   lines */						   lines */
+-- single line					// single line
+-* multiple						/* multiple
+   lines *-						   lines */
 ```
 
 ### Objects
@@ -97,7 +97,6 @@ Shape =:                        let shape = {
 
 There are two ways to write most operations: The typical symbol and a simplified string representation of the operation.  (Shown below)
 
-### Alternative Operations
 ```
 addedTo         +=
 
