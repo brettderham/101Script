@@ -2,7 +2,7 @@
 
 # 101Script
 
-A programming language for beginners
+A programming language for beginners.
 
 Repo for Riley Persily, Thomas Ochsner, Simon Wroblewski, Kea Braekman, and Brett Derham
 
@@ -16,6 +16,7 @@ Repo for Riley Persily, Thomas Ochsner, Simon Wroblewski, Kea Braekman, and Bret
 * Weakly & Dynamically Typed
 * Multiple names/ways to use basic operations
 * Type inference
+* String Interpolation
 * Simple loops (`for` and `while`)
 * Semi-colon not required after every line
 
