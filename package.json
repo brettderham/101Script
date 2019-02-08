@@ -21,5 +21,8 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.16.0",
     "mocha": "^5.2.0"
+  },
+  "dependencies": {
+    "ohm-js": "^0.14.0"
   }
 }
