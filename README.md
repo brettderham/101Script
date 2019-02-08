@@ -122,10 +122,10 @@ lessOrEq        <=
 greaterOrEq     >=
 ```
 
-#### Method A
+#### ChangeMaker Using Symbols
 
-![MethodA](https://github.com/brettderham/101Script/blob/master/resources/changeMaker101a.png "Method A")
+![SymbolMethod](https://github.com/brettderham/101Script/blob/master/resources/changeMaker101a.png "Symbol Method")
 
-#### Method B
+#### ChangeMaker Using String Representation
 
-![MethodB](https://github.com/brettderham/101Script/blob/master/resources/changeMaker101b.png "Method B")
+![StringMethod](https://github.com/brettderham/101Script/blob/master/resources/changeMaker101b.png "String Method")
