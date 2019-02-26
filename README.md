@@ -39,12 +39,12 @@ y = 5 + 3 - 2                   let y = 5 + 3 - 2
 ### If Statements 
 ```
 if(x > 5):                      if(x > 5) {
-	print(x);						console.log(x)
+	print(x);		    console.log(x)
 else if(x < 3):                 } else if(x < 3) {
-	print(y);						console.log(y)
+	print(y);		    console.log(y)
 else:                           } else {
-	print(z);						console.log(z);
-                                            }
+	print(z);		    console.log(z);
+                                }
 ```
 
 ### Basic Loop Statements
@@ -74,15 +74,15 @@ function multiplyByThree(x):        function multiplyByThree(x) {
 ### Comments
 ```
 -- single line					// single line
--* multiple						/* multiple
-   lines *-						   lines */
+-* multiple					/* multiple
+   lines *-					lines */
 ```
 
 ### Objects
 ```
 Shape =:                        let shape = {
-    name = "circle",            name: "circle",
-    radius = 3;                 radius: 3
+    name = "circle",                name: "circle",
+    radius = 3;                     radius: 3
                                 }
     print(Shape.name)           console.log(Shape.name)
 
