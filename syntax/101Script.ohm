@@ -1,6 +1,7 @@
 IOIScript {
-  Program     =  newline* Block newline*
+  Program     =  newline* (Block | ClassDecl) newline*
   Block       =  (Stmt | SimpleStmt | newline )+
+  ClassDecl   =  class id (extends id)? Block* ";"
   Stmt        =  SimpleStmt newline                      -- simple
               |  "loopWhile" "(" Exp ")" ":" Block ";"   -- while
               |  "loop" "(" Exp ")" ":" Block ";"        -- loop
@@ -31,23 +32,26 @@ IOIScript {
               |  "[" ListOf<Exp, ","> "]"                -- list
               |  Call
               |  VarExp
-              |  "(" Exp ")"                             -- parens
+              |  "(" Exp ")"
+              |  NewObject                               -- parens
+              |  className                               -- class
   Call        =  VarExp "(" Args ")"
-
+  
+  NewObject   =  id ":" Args ";"
   Exps        =  NonemptyListOf<Exp, ",">
   Ids         =  NonemptyListOf<id, ",">
-  VarExp      =  VarExp "[" Exp "]"                     -- subscripted
-              |  id                                     -- simple
+  VarExp      =  VarExp "[" Exp "]"                      -- subscripted
+              |  id                                      -- simple
   VarExps     =  NonemptyListOf<VarExp, ",">
   Param       =  id ("=" Exp)?
   Params      =  ListOf<Param, ",">
   Arg         =  (id ":")? Exp
-  Args        =  ListOf<Arg, ",">
+  Args        =  ListOf<Arg, ";">
 
   keyword     =  ("loopWhile" | "if" | "else" | "else" | "function" | "return" | "print"
               |  "break" | "and" | "or" | "not" | "true" | "false" |  "lessOrEq" | "lessThan" 
               | "equals" | "notEqual" | "greaterOrEq" | "greaterThan" | "addedTo" | "multipliedTo"
-              | "subtractedFrom" | "dividedFrom" | "gets" | "remainder") ~idrest
+              | "subtractedFrom" | "dividedFrom" | "gets" | "remainder" | "class") ~idrest
   id          =  ~keyword ("_" | letter) idrest*
   idrest      =  "_" | alnum
   numlit      =  digit+ ("." digit+)? (("E" | "e") ("+" | "-")? digit+)?
@@ -59,7 +63,6 @@ IOIScript {
               |  "lessOrEq" | "lessThan" | "equals" | "notEqual" | "greaterOrEq" | "greaterThan"
   mulop       =  "*" | "/" | "%" | "^" | "multipliedTo" | "dividedFrom" | "remainder"
   prefixop    =  "-" | "not"
-  
   newline     =  "\n"+
   space      :=  " " | "\t" | comment
   comment     =  "--" ~"--" (~newline ~"--" any)*      -- comment
