@@ -1,10 +1,6 @@
 /*
- * Grammar Tests
- *
- * Tests that the we've constructed our grammar correctly, by checking that
- * programs that we expect to be matched by the grammar are matched, and
- * those that we expect not to cause an error to be thrown.
- */
+  Taken from Dr. Raymond Toal's PlainScript language @ https://github.com/rtoal/plainscript
+*/
 
 const fs = require('fs');
 const assert = require('assert');
