@@ -6,4 +6,4 @@ module.exports = class FunctionDeclaration {
     this.id = id;
     this.function = new FunctionObject(id, params, body);
   }
-}
+};
