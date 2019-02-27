@@ -5,16 +5,16 @@ IOIScript {
   Stmt        =  SimpleStmt newline                      -- simple
               |  "loopWhile" "(" Exp ")" ":" Block ";"   -- while
               |  "loop" "(" Exp ")" ":" Block ";"        -- loop
-              |  "if" "(" Exp ")" ":" Block ";" 
+              |  "if" "(" Exp ")" ":" Block ";"
                  ("else if" "(" Exp ")"":" Block ";")*
                  ("else" ":" Block ";")?                 -- if
               |  "function" id "(" Params ")" ":" Block ";"           -- function
-  SimpleStmt  =  Ids ("=" | "gets") Exps                            -- vardecl
-              |  VarExps ("=" | "gets") Exps                        -- assign
+  SimpleStmt  =  Ids ("=" | "gets") Exps                              -- vardecl
+              |  VarExps ("=" | "gets") Exps                          -- assign
               |  Call                                    -- call
               |  "break"                                 -- break
               |  "return" Exp?                           -- return
-  
+
   Exp         =  Exp "or" Exp1                           -- or
               |  Exp "and" Exp1                          -- and
               |  Exp1
@@ -36,7 +36,7 @@ IOIScript {
               |  NewObject                               -- parens
               |  className                               -- class
   Call        =  VarExp "(" Args ")"
-  
+
   NewObject   =  id ":" Args ";"
   Exps        =  NonemptyListOf<Exp, ",">
   Ids         =  NonemptyListOf<id, ",">
@@ -49,7 +49,7 @@ IOIScript {
   Args        =  ListOf<Arg, ";">
 
   keyword     =  ("loopWhile" | "if" | "else" | "else" | "function" | "return" | "print"
-              |  "break" | "and" | "or" | "not" | "true" | "false" |  "lessOrEq" | "lessThan" 
+              |  "break" | "and" | "or" | "not" | "true" | "false" |  "lessOrEq" | "lessThan"
               | "equals" | "notEqual" | "greaterOrEq" | "greaterThan" | "addedTo" | "multipliedTo"
               | "subtractedFrom" | "dividedFrom" | "gets" | "remainder" | "class") ~idrest
   id          =  ~keyword ("_" | letter) idrest*
@@ -59,7 +59,7 @@ IOIScript {
   strlit      = "\"" (~"--" ~"\"" ~"\n" any | escape)* "\""
   escape      = "\\" ("\\" | "\"" | "n")               -- simple
   addop       =  "+" | "-" | "addedTo" | "subtractedFrom"
-  relop       =  "<=" | "<" | "==" | "!=" | ">=" | ">" 
+  relop       =  "<=" | "<" | "==" | "!=" | ">=" | ">"
               |  "lessOrEq" | "lessThan" | "equals" | "notEqual" | "greaterOrEq" | "greaterThan"
   mulop       =  "*" | "/" | "%" | "^" | "multipliedTo" | "dividedFrom" | "remainder"
   prefixop    =  "-" | "not"
