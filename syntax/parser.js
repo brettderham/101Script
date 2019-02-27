@@ -11,10 +11,7 @@ const Case = require('../ast/case');
 const WhileStatement = require('../ast/while-statement');
 const CallStatement = require('../ast/call-statement');
 const FunctionDeclaration = require('../ast/function-declaration');
-<<<<<<< HEAD
 const FunctionObject = require('../ast/function-object');
-=======
->>>>>>> 00a7ace982028691dd42b3de9b1b62cd86e787a6
 const ListExpression = require('../ast/list-expression');
 const BinaryExpression = require('../ast/binary-expression');
 const UnaryExpression = require('../ast/unary-expression');
