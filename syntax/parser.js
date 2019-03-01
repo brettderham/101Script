@@ -2,13 +2,16 @@ const ohm = require('ohm-js');
 const fs = require('fs');
 
 const Program = require('../ast/program');
+const Block = require('../ast/block');
 const VariableDeclaration = require('../ast/variable-declaration');
+const ClassDeclaration = require('../ast/class-declaration');
 const AssignmentStatement = require('../ast/assignment-statement');
 const BreakStatement = require('../ast/break-statement');
 const ReturnStatement = require('../ast/return-statement');
 const IfStatement = require('../ast/if-statement');
 const Case = require('../ast/case');
 const WhileStatement = require('../ast/while-statement');
+const LoopStatement = require('../ast/loop-statement');
 const CallStatement = require('../ast/call-statement');
 const FunctionDeclaration = require('../ast/function-declaration');
 const FunctionObject = require('../ast/function-object');
@@ -17,7 +20,7 @@ const BinaryExpression = require('../ast/binary-expression');
 const UnaryExpression = require('../ast/unary-expression');
 const IdentifierExpression = require('../ast/identifier-expression');
 const SubscriptedExpression = require('../ast/subscripted-expression');
-const Call = require('../ast/call-expression');
+const Call = require('../ast/call');
 const Parameter = require('../ast/parameter');
 const Argument = require('../ast/argument');
 const BooleanLiteral = require('../ast/boolean-literal');
@@ -35,15 +38,15 @@ function unpack(a) {
 const astGenerator = grammar.createSemantics().addOperation('ast', {
   Program(_1, body, _2) { return new Program(body.ast()); },
 
-  //Block
+  Block(stmt) { return new Block(stmt.ast()); },
 
-  //ClassDecl
+  ClassDec(_1, id, vars, FunDec, _2) { return new ClassDeclaration(id.sourceString, vars.ast(), FunDec.ast()); },
 
   Stmt_simple(statement, _) { return statement.ast(); },
 
   Stmt_while(_, test) { return new WhileStatement(test.ast(), suite.ast()); },
 
-  //Loop
+  Stmt_loop(_, test) { return new LoopStatement(test.ast(), suite.ast()); },
 
   Stmt_if(_1, firstTest, firstSuite, _2, moreTests, moreSuites, _3, lastSuite) {
     const tests = [firstTest.ast(), ...moreTests.ast()];
@@ -52,9 +55,7 @@ const astGenerator = grammar.createSemantics().addOperation('ast', {
     return new IfStatement(cases, unpack(lastSuite.ast()));
   },
 
-  //Stmt_function(_1, id, _2, params, _3, suite) {
-  //  return new FunctionDeclaration(id.ast(), params.ast(), suite.ast());
-  //},
+  // Stmt_function(_1, id, _2, params, _3, suite) { return new FunctionDeclaration(id.ast(), params.ast(), suite.ast()); },
 
   SimpleStmt_vardecl(_1, v, _2, e) { return new VariableDeclaration(v.ast(), e.ast()); },
 
@@ -82,11 +83,9 @@ const astGenerator = grammar.createSemantics().addOperation('ast', {
 
   Exp5_parens(_1, expression, _2) { return expression.ast(); },
 
+  Exp5_object(_1, v, _2, args, _3) { return new FunctionObject(v.ast(), args.ast()); }, 
+
   Call(callee, _1, args, _2) { return new Call(callee.ast(), args.ast()); },
-
-  //class
-
-  //object
 
   VarExp_subscripted(v, _1, e, _2) { return new SubscriptedExpression(v.ast(), e.ast()); },
 
