@@ -1,0 +1,4 @@
+x = 0
+loop(5)
+    x = x + 1
+    return x;
