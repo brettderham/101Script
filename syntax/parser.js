@@ -10,6 +10,7 @@ const BreakStatement = require('../ast/break-statement');
 const ReturnStatement = require('../ast/return-statement');
 const IfStatement = require('../ast/if-statement');
 const Case = require('../ast/case');
+const LoopStatement = require('../ast/loop-statement');
 const WhileStatement = require('../ast/while-statement');
 const LoopStatement = require('../ast/loop-statement');
 const CallStatement = require('../ast/call-statement');
