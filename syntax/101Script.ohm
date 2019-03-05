@@ -32,8 +32,8 @@ IOIScript {
               |  "[" ListOf<Exp, ","> "]"                -- list
               |  Call
               |  VarExp
-              |  "(" Exp ")"
-              |  NewObject                               -- parens
+              |  "(" Exp ")"                             -- parens
+              |  NewObject                               -- object
               |  className                               -- class
   Call        =  VarExp "(" Args ")"
 
