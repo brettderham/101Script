@@ -12,7 +12,6 @@ const IfStatement = require('../ast/if-statement');
 const Case = require('../ast/case');
 const LoopStatement = require('../ast/loop-statement');
 const WhileStatement = require('../ast/while-statement');
-const LoopStatement = require('../ast/loop-statement');
 const CallStatement = require('../ast/call-statement');
 const FunctionDeclaration = require('../ast/function-declaration');
 const FunctionObject = require('../ast/function-object');
