@@ -1,0 +1,26 @@
+SimpleStmt {
+    id: 'x',
+    keyword: 'gets',
+    exp: [ Exp5 {
+        numlit: '0'
+    }]
+}
+Stmt {
+    keyword: 'loopWhile''
+    exp: [ Exp5 {
+        exp: [ Exp1 {
+            id: 'x',
+            relop: '<',
+            exp: [ Exp5 {
+                numlit: '5'
+            }]
+        }]
+    }],
+    Block {
+        id: 'doStuff',
+        exp: [ Exp5 {
+            id: x
+        }]
+
+    }
+}

@@ -1,0 +1,12 @@
+SimpleStmt {
+    id: 'x',
+    exp: [ Exp5 {
+        exp: [ Exp3 {
+            numlit: '10',
+            mulop: '*',
+            numlit: '3',
+            mulop: '^',
+            numlit: '2'
+        }]
+    }]
+}

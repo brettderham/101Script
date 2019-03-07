@@ -58,7 +58,7 @@ IOIScript {
   addop       =  "+" | "-" | "addedTo" | "subtractedFrom"
   relop       =  "<=" | "<" | "==" | "!=" | ">=" | ">"
               |  "lessOrEq" | "lessThan" | "equals" | "notEqual" | "greaterOrEq" | "greaterThan"
-  mulop       =  "*" | "/" | "%" | "^" | "multipliedTo" | "dividedFrom" | "remainder"
+  mulop       =  "*" | "/" | "%" | "^" | "multipliedTo" | "dividedFrom" | "remainder" | "^"
   prefixop    =  "-" | "not"
   newline     =  "\n"+
   space      :=  " " | "\t" | comment

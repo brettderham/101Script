@@ -1,0 +1,7 @@
+SimpleStmt {
+    id: 'x',
+    keyword: 'gets',
+    exp: [ Exp5 {
+        numlit: '32'
+    }]
+}

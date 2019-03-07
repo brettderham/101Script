@@ -1,0 +1,12 @@
+Stmt {
+    keyword: 'function',
+    id: 'theKnightsWhoSay'
+    block {
+        SimpleStmt { 
+            keyword: 'return',
+            exp: [ Exp5 { 
+                strlit: 'Neee!!!'
+            }]
+        }
+    }
+}
