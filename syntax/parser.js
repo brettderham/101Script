@@ -34,6 +34,10 @@ function unpack(a) {
   return a.length === 0 ? null : a[0];
 }
 
+function arrayToNullable(a) {
+  return a.length === 0 ? null : a[0];
+}
+
 /* eslint-disable no-unused-vars */
 const astGenerator = grammar.createSemantics().addOperation('ast', {
   Program(_1, body, _2) {
@@ -44,35 +48,32 @@ const astGenerator = grammar.createSemantics().addOperation('ast', {
     return new Block(stmt.ast());
   },
 
-  ClassDec(_1, id, vars, FunDec, _2) {
-    return new ClassDeclaration(id.sourceString, vars.ast(), FunDec.ast());
+  ClassDecl_class(_1, id, _2, alternate, body, _3) {
+    return new ClassDeclaration(id.sourceString, arrayToNullable(alternate.ast()), body.ast());
   },
 
   Stmt_simple(statement, _) {
     return statement.ast();
   },
 
-  Stmt_while(_, test) {
-    return new WhileStatement(test.ast());
+  Stmt_while(_1, _2, test, _3, _4, body, _5) {
+    return new WhileStatement(test.ast(), body.ast());
   },
 
-  Stmt_loop(_, test) {
-    return new LoopStatement(test.ast());
+  Stmt_loop(_1, _2, test, _3, _4, body, _5) {
+    return new LoopStatement(test.ast(), body.ast());
   },
 
-  Stmt_if(_1, firstTest, firstSuite, _2, moreTests, moreSuites, _3, lastSuite) {
-    const tests = [firstTest.ast(), ...moreTests.ast()];
-    const bodies = [firstSuite.ast(), ...moreSuites.ast()];
-    const cases = tests.map((test, index) => new Case(test, bodies[index]));
-    return new IfStatement(cases, unpack(lastSuite.ast()));
+  Stmt_if(_1, _2, firstTest, _3, _4, body, _5, _6, _7, moreTests, _8, _9, moreBody, _10, _11, _12, alternate, _13) {
+    return new IfStatement(firstTest.ast(), body.ast(), moreTests.ast(), moreBody.ast(), alternate.ast());
   },
 
-  Stmt_function(_1, id, _2, params) {
-    return new FunctionDeclaration(id.ast(), params.ast());
+  Stmt_function(_1, id, _2, params, _3, _4, body, _5) {
+    return new FunctionDeclaration(id.ast(), params.ast(), body.ast());
   },
 
-  SimpleStmt_vardecl(_1, v, _2, e) {
-    return new VariableDeclaration(v.ast(), e.ast());
+  SimpleStmt_vardecl(id, _1, e) {
+    return new VariableDeclaration(id.ast(), e.ast());
   },
 
   SimpleStmt_assign(v, _, e) {
@@ -123,12 +124,12 @@ const astGenerator = grammar.createSemantics().addOperation('ast', {
     return expression.ast();
   },
 
-  Exp5_object(_1, v, _2, args, _3) {
-    return new FunctionObject(v.ast(), args.ast());
-  },
-
   Call(callee, _1, args, _2) {
     return new Call(callee.ast(), args.ast());
+  },
+
+  NewObject_object(id, _1, args, _2) {
+    return new FunctionObject(id.ast(), args.ast());
   },
 
   VarExp_subscripted(v, _1, e, _2) {

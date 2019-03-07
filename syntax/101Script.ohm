@@ -1,7 +1,7 @@
 IOIScript {
   Program     =  newline* (Block | ClassDecl) newline*
   Block       =  (Stmt | SimpleStmt | newline )+
-  ClassDecl   =  class id (extends id)? Block* ";"
+  ClassDecl   =  "class" id ("extends" id)? Block* ";"   -- class
   Stmt        =  SimpleStmt newline                      -- simple
               |  "loopWhile" "(" Exp ")" ":" Block ";"   -- while
               |  "loop" "(" Exp ")" ":" Block ";"        -- loop
@@ -9,8 +9,8 @@ IOIScript {
                  ("else if" "(" Exp ")"":" Block ";")*
                  ("else" ":" Block ";")?                 -- if
               |  "function" id "(" Params ")" ":" Block ";"           -- function
-  SimpleStmt  =  Ids ("=" | "gets") Exps                              -- vardecl
-              |  VarExps ("=" | "gets") Exps                          -- assign
+  SimpleStmt  =  id ("=" | "gets") Exp                              -- vardecl
+              |  VarExps ("=" | "gets") Exp                          -- assign
               |  Call                                    -- call
               |  "break"                                 -- break
               |  "return" Exp?                           -- return
@@ -33,13 +33,10 @@ IOIScript {
               |  Call
               |  VarExp
               |  "(" Exp ")"                             -- parens
-              |  NewObject                               -- object
-              |  className                               -- class
+              |  NewObject                              
   Call        =  VarExp "(" Args ")"
 
-  NewObject   =  id ":" Args ";"
-  Exps        =  NonemptyListOf<Exp, ",">
-  Ids         =  NonemptyListOf<id, ",">
+  NewObject   =  id ":" Args ";"                         -- object
   VarExp      =  VarExp "[" Exp "]"                      -- subscripted
               |  id                                      -- simple
   VarExps     =  NonemptyListOf<VarExp, ",">
@@ -51,7 +48,7 @@ IOIScript {
   keyword     =  ("loopWhile" | "if" | "else" | "else" | "function" | "return" | "print"
               |  "break" | "and" | "or" | "not" | "true" | "false" |  "lessOrEq" | "lessThan"
               | "equals" | "notEqual" | "greaterOrEq" | "greaterThan" | "addedTo" | "multipliedTo"
-              | "subtractedFrom" | "dividedFrom" | "gets" | "remainder" | "class") ~idrest
+              | "subtractedFrom" | "dividedFrom" | "gets" | "remainder" | "class" | "extends") ~idrest
   id          =  ~keyword ("_" | letter) idrest*
   idrest      =  "_" | alnum
   numlit      =  digit+ ("." digit+)? (("E" | "e") ("+" | "-")? digit+)?
