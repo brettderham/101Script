@@ -181,7 +181,7 @@ const astGenerator = grammar.createSemantics().addOperation('ast', {
 module.exports = (text) => {
   const match = grammar.match(text);
   if (!match.succeeded()) {
-    throw match.message;
+    throw new Error(`Syntax Error: ${match.message}`);
   }
-  return match.succeeded();
+  return astGenerator(match).ast();
 };
