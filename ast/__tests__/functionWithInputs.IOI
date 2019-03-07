@@ -1,0 +1,2 @@
+function hello(name, age, major):
+   return "Hi, my name is " + name + " I am " + age + " years old, and my favorite color is " + favoriteColor;
