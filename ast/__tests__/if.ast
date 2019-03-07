@@ -1,0 +1,15 @@
+Stmt {
+    keyword: 'if',
+        exp: [ Exp1 {
+            id: 'x',
+            relop: '==',
+            id: 'y'
+        }],
+        Block {
+            exp: [ SimpleStmt {
+                id: 'x',
+                relop: '=',
+                id: 'z'
+            }]
+        }
+}

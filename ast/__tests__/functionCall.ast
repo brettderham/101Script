@@ -1,0 +1,10 @@
+SimpleStmt {
+    id: 'x',
+    keyword: 'gets',
+    id: 'halfTheString',
+        exp: [ Exp5 {
+            strlit: 'PooP'
+        }] 
+            
+            
+}

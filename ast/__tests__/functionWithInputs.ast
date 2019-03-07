@@ -1,0 +1,18 @@
+Stmt {
+    id: 'functionWithInputs'
+    params: [ Params { id: 'name', id: 'age', id: 'major' } ]
+    Block {
+            SimpleStmt {
+                keyword 'return',
+                exp: [ Exp5 { 
+                    strlit: "Hi, my name is ",
+                    id: 'name',
+                    strlit: " I am ",
+                    id: 'age',
+                    strlit: " years old, and my major is ",
+                    id: 'major'
+                }]
+            }
+    }
+}
+                
