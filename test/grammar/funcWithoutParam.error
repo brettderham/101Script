@@ -1,2 +1,0 @@
-function addFive():
-    return x + 5;
