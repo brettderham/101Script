@@ -1,0 +1,3 @@
+function averageOf3(x,y,z):
+   result = x + y + z
+   return result/3
