@@ -1,0 +1,10 @@
+NewObject {
+    id: 'shape'
+    args:
+        [ SimpleStmt {
+            id: 'name'
+            exp: [ Exp5 { strlit: circle } ] } ],
+          SimpleStmtn {
+            id: 'radius'
+            exp: [ Exp5 { numlit: 3 } ] ]
+}

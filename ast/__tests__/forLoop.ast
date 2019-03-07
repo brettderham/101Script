@@ -1,0 +1,11 @@
+SimpleStmt {
+            id: 'x'
+            exp: [ Exp5 { numlit: '0' } ] 
+}
+Stmt {
+    exp: [ Exp5 { numlit: '5' }
+    block { 
+        exp: [ Exp2 { numlit: '1', addop: 'addedTo', id: 'x'} ]
+    }
+    ]
+ }

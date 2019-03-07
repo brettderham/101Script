@@ -1,0 +1,13 @@
+Stmt {
+    id: 'averageOf3'
+    params: [ Params { id: 'x', id: 'y', id: 'z' } ]
+    block { 
+        SimpleStmt { 
+            exp: [ Exp2 { id: 'x', addop: 'addedTo', id: 'y', addop: 'addedTo', id: 'z' } ]
+            SimpleStmt { 
+                keyword: 'return',
+                exp: [ Exp3 { id: 'result', mulop: '/', numlit: '3'}]
+            }
+        }
+    }
+}

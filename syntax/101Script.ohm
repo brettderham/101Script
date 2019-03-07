@@ -1,7 +1,6 @@
 IOIScript {
   Program     =  newline* (Block | ClassDecl) newline*
-  Block       =  (Stmt | SimpleStmt | newline )+
-  ClassDecl   =  "class" id ("extends" id)? Block* ";"   -- class
+  Block       =  (Stmt | SimpleStmt | Exp | newline )+
   Stmt        =  SimpleStmt newline                      -- simple
               |  "loopWhile" "(" Exp ")" ":" Block ";"   -- while
               |  "loop" "(" Exp ")" ":" Block ";"        -- loop
@@ -36,19 +35,20 @@ IOIScript {
               |  NewObject                              
   Call        =  VarExp "(" Args ")"
 
-  NewObject   =  id ":" Args ";"                         -- object
+  ClassDecl   =  "class" id ("extends" id)? ":" Block* ";"   -- class
+  NewObject   =  "object" id "=" ":" Args ";"                -- object
   VarExp      =  VarExp "[" Exp "]"                      -- subscripted
               |  id                                      -- simple
   VarExps     =  NonemptyListOf<VarExp, ",">
   Param       =  id ("=" Exp)?
   Params      =  ListOf<Param, ",">
-  Arg         =  (id ":")? Exp
+  Arg         =  (id ":")? Stmt
   Args        =  ListOf<Arg, ";">
 
   keyword     =  ("loopWhile" | "if" | "else" | "else" | "function" | "return" | "print"
               |  "break" | "and" | "or" | "not" | "true" | "false" |  "lessOrEq" | "lessThan"
               | "equals" | "notEqual" | "greaterOrEq" | "greaterThan" | "addedTo" | "multipliedTo"
-              | "subtractedFrom" | "dividedFrom" | "gets" | "remainder" | "class" | "extends") ~idrest
+              | "subtractedFrom" | "dividedFrom" | "gets" | "remainder" | "class" | "extends" | "object") ~idrest
   id          =  ~keyword ("_" | letter) idrest*
   idrest      =  "_" | alnum
   numlit      =  digit+ ("." digit+)? (("E" | "e") ("+" | "-")? digit+)?

@@ -1,0 +1,3 @@
+class Tester:
+  x = 5
+  y = "dog";

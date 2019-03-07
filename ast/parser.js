@@ -48,10 +48,6 @@ const astGenerator = grammar.createSemantics().addOperation('ast', {
     return new Block(stmt.ast());
   },
 
-  ClassDecl_class(_1, id, _2, alternate, body, _3) {
-    return new ClassDeclaration(id.sourceString, arrayToNullable(alternate.ast()), body.ast());
-  },
-
   Stmt_simple(statement, _) {
     return statement.ast();
   },
@@ -128,7 +124,11 @@ const astGenerator = grammar.createSemantics().addOperation('ast', {
     return new Call(callee.ast(), args.ast());
   },
 
-  NewObject_object(id, _1, args, _2) {
+  ClassDecl_class(_1, id, _2, alternate, _3, body, _4) {
+    return new ClassDeclaration(id.sourceString, arrayToNullable(alternate.ast()), body.ast());
+  },
+
+  NewObject_object(_1, id, _2, _3, args, _4) {
     return new FunctionObject(id.ast(), args.ast());
   },
 
