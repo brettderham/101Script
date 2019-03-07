@@ -1,0 +1,3 @@
+y = 0
+loopWhile(y < 8):
+    f(y);

@@ -5,8 +5,8 @@ IOIScript {
   Stmt        =  SimpleStmt newline                      -- simple
               |  "loopWhile" "(" Exp ")" ":" Block ";"   -- while
               |  "loop" "(" Exp ")" ":" Block ";"        -- loop
-              |  "if" "(" Exp ")" ":" Block ";"
-                 ("else if" "(" Exp ")"":" Block ";")*
+              |  "if" "(" Exp ")" ":" Block ";" newline
+                 ("else if" "(" Exp ")"":" Block ";")* newline
                  ("else" ":" Block ";")?                 -- if
               |  "function" id "(" Params ")" ":" Block ";"           -- function
   SimpleStmt  =  id ("=" | "gets") Exp                              -- vardecl

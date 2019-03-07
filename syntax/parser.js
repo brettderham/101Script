@@ -64,8 +64,8 @@ const astGenerator = grammar.createSemantics().addOperation('ast', {
     return new LoopStatement(test.ast(), body.ast());
   },
 
-  Stmt_if(_1, _2, firstTest, _3, _4, body, _5, _6, _7, moreTests, _8, _9, moreBody, _10, _11, _12, alternate, _13) {
-    return new IfStatement(firstTest.ast(), body.ast(), moreTests.ast(), moreBody.ast(), alternate.ast());
+  Stmt_if(_1, _2, firstTest, _3, _4, body, _5, newline, _6, _7, moreTests, _8, _9, moreBody, _10, _11, moreNewline, _12, alternate, _13) {
+    return new IfStatement(firstTest.ast(), body.ast(), newline.ast(), moreTests.ast(), moreBody.ast(), moreNewline.ast(), alternate.ast());
   },
 
   Stmt_function(_1, id, _2, params, _3, _4, body, _5) {
