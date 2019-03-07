@@ -1,0 +1,3 @@
+x gets 32
+loop(2):
+   1 addedTo x;

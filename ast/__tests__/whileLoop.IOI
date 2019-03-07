@@ -1,0 +1,3 @@
+x = 0
+loopWhile(x<5):
+   doStuff(x);
