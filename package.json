@@ -4,13 +4,16 @@
   "description": "A simple programming language.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/**/*test.js"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/brettderham/101Script.git"
   },
   "author": "",
+  "jest": {
+    "testMatch": [ "**/tests/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)" ]
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/brettderham/101Script/issues"
@@ -20,6 +23,7 @@
     "eslint": "^5.13.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.16.0",
+    "jest": "^24.3.1",
     "mocha": "^5.2.0"
   },
   "dependencies": {
