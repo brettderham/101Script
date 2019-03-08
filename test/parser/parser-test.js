@@ -1,17 +1,10 @@
-/*
- * Parser Tests
- *
- * These tests check that the parser produces the AST that we expect. The Tiger
- * programs will be in .tig files, and the expected ASTs will be in .ast files.
- */
-
-const fs = require('fs');
 const util = require('util');
-const parse = require('../../ast/parser.js');
+const fs = require('fs');
+const parse = require('../../syntax/parser');
 
 describe('The parser', () => {
   fs.readdirSync(__dirname).forEach((name) => {
-    if (name.endsWith('.tig')) {
+    if (name.endsWith('.IOI')) {
       test(`produces the correct AST for ${name}`, (done) => {
         fs.readFile(`${__dirname}/${name}`, 'utf-8', (err, input) => {
           const ast = parse(input);
@@ -25,4 +18,3 @@ describe('The parser', () => {
     }
   });
 });
-
