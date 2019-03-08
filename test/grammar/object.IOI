@@ -1,4 +1,4 @@
-object Shape =:                     
-    name = "circle",               
-    radius = 3;                                               
-    print(Shape.name);           
+object Shape =: 
+    name = "circle", 
+    radius = 3; 
+print(Shape.name);           
