@@ -11,9 +11,6 @@
     "url": "git+https://github.com/brettderham/101Script.git"
   },
   "author": "",
-  "jest": {
-    "testMatch": [ "**/tests/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)" ]
-  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/brettderham/101Script/issues"
