@@ -1,13 +1,34 @@
-Stmt {
-    id: 'averageOf3'
-    params: [ Params { id: 'x', id: 'y', id: 'z' } ]
-    block { 
-        SimpleStmt { 
-            exp: [ Exp2 { id: 'x', addop: 'addedTo', id: 'y', addop: 'addedTo', id: 'z' } ]
-            SimpleStmt { 
-                keyword: 'return',
-                exp: [ Exp3 { id: 'result', mulop: '/', numlit: '3'}]
-            }
-        }
-    }
-}
+Program {
+  statements:
+   Block {
+     statements:
+      [ FunctionDeclaration {
+          id: 'averageOf3',
+          function:
+           FunctionObject {
+             id: 'averageOf3',
+             params:
+              [ Parameter { id: 'x', defaultExpression: null },
+                Parameter { id: 'y', defaultExpression: null },
+                Parameter { id: 'z', defaultExpression: null } ],
+             body:
+              Block {
+                statements:
+                 [ [ '\n' ],
+                   VariableDeclaration {
+                     ids: 'result',
+                     initializers:
+                      BinaryExpression {
+                        op: '+',
+                        left:
+                         BinaryExpression {
+                           op: '+',
+                           left: IdentifierExpression { id: 'x' },
+                           right: IdentifierExpression { id: 'y' } },
+                        right: IdentifierExpression { id: 'z' } } },
+                   ReturnStatement {
+                     returnValue:
+                      BinaryExpression {
+                        op: '/',
+                        left: IdentifierExpression { id: 'result' },
+                        right: NumericLiteral { value: 3 } } } ] } } } ] } }

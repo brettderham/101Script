@@ -128,7 +128,7 @@ const astGenerator = grammar.createSemantics().addOperation('ast', {
     return new ClassDeclaration(id.sourceString, arrayToNullable(alternate.ast()), body.ast());
   },
 
-  NewObject_object(_1, id, _2, _3, args, _4) {
+  NewObject_object(_1, id, _2, args, _3) {
     return new FunctionObject(id.ast(), args.ast());
   },
 

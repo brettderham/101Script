@@ -1,10 +1,8 @@
-SimpleStmt {
-    id: 'x',
-    keyword: 'gets',
-    id: 'halfTheString',
-        exp: [ Exp5 {
-            strlit: 'PooP'
-        }] 
-            
-            
-}
+Program {
+  statements:
+   Block {
+     statements:
+      [ VariableDeclaration {
+          ids: 'x',
+          initializers: IdentifierExpression { id: 'halfTheString' } },
+        StringLiteral { value: '"Poop"' } ] } }

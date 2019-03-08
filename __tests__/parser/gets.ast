@@ -1,7 +1,5 @@
-SimpleStmt {
-    id: 'x',
-    keyword: 'gets',
-    exp: [ Exp5 {
-        numlit: '32'
-    }]
-}
+Program {
+  statements:
+   Block {
+     statements:
+      [ VariableDeclaration { ids: 'x', initializers: NumericLiteral { value: 32 } } ] } }

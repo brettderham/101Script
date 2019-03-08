@@ -1,20 +1,19 @@
-SimpleStmt {
-    id: 'y',
-    exp: [ Exp2 {
-        exp: [ Exp5 {
-            numlit: '10',
-        }],
-        mulop: '/',
-        exp: [ Exp5 {
-            numlit: '6',
-        }],
-        mulop: '*',
-        exp: [ Exp5 {
-            numlit: '7',
-        }],
-        mulop: '/',
-        exp: [ Exp5 {
-            numlit: '4',
-        }]
-    }]
-}
+Program {
+  statements:
+   Block {
+     statements:
+      [ VariableDeclaration {
+          ids: 'y',
+          initializers:
+           BinaryExpression {
+             op: '/',
+             left:
+              BinaryExpression {
+                op: '*',
+                left:
+                 BinaryExpression {
+                   op: '/',
+                   left: NumericLiteral { value: 5 },
+                   right: NumericLiteral { value: 6 } },
+                right: NumericLiteral { value: 7 } },
+             right: NumericLiteral { value: 4 } } } ] } }

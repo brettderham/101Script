@@ -1,26 +1,17 @@
-SimpleStmt {
-    id: 'x',
-    keyword: 'gets',
-    exp: [ Exp5 {
-        numlit: '0'
-    }]
-}
-Stmt {
-    keyword: 'loopWhile''
-    exp: [ Exp5 {
-        exp: [ Exp1 {
-            id: 'x',
-            relop: '<',
-            exp: [ Exp5 {
-                numlit: '5'
-            }]
-        }]
-    }],
-    Block {
-        id: 'doStuff',
-        exp: [ Exp5 {
-            id: x
-        }]
-
-    }
-}
+Program {
+  statements:
+   Block {
+     statements:
+      [ VariableDeclaration { ids: 'x', initializers: NumericLiteral { value: 0 } },
+        WhileStatement {
+          test:
+           BinaryExpression {
+             op: '<',
+             left: IdentifierExpression { id: 'x' },
+             right: NumericLiteral { value: 5 } },
+          body:
+           Block {
+             statements:
+              [ [ '\n' ],
+                IdentifierExpression { id: 'doStuff' },
+                IdentifierExpression { id: 'x' } ] } } ] } }

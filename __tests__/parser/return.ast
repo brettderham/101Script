@@ -1,12 +1,15 @@
-Stmt {
-    keyword: 'function',
-    id: 'theKnightsWhoSay'
-    block {
-        SimpleStmt { 
-            keyword: 'return',
-            exp: [ Exp5 { 
-                strlit: 'Neee!!!'
-            }]
-        }
-    }
-}
+Program {
+  statements:
+   Block {
+     statements:
+      [ FunctionDeclaration {
+          id: 'theKnightsWhoSay',
+          function:
+           FunctionObject {
+             id: 'theKnightsWhoSay',
+             params: [],
+             body:
+              Block {
+                statements:
+                 [ [ '\n' ],
+                   ReturnStatement { returnValue: StringLiteral { value: '"Neee!!!"' } } ] } } } ] } }

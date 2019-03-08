@@ -1,52 +1,19 @@
-SimpleStmt {
-    id: 'x',
-    keyword: 'gets',
-    numlit: '2'
-}
-Stmt {
-    keyword: 'if',
-    exp: [ Exp1 {
-        id: 'y',
-        relop: 'equals',
-        exp: [ Exp5 {
-            numlit: '2'
-        }]
-    }],
-    block {
-        exp: [ Exp2 {
-            exp: [ Exp5 {
-                numlit: '2'
-            }],
-            addop: 'addedTo',
-            id: 'x'
-        }],
-    },
-    keyword: 'else if',
-    exp: [ Exp1 {
-        id: 'y',
-        relop: 'equals',
-        exp: [ Exp5 {
-            numlit: '1'
-        }]
-    }],
-    block {
-        exp: [ Exp2 {
-            exp: [ Exp5 {
-                numlit: '1'
-            }],
-            addop: 'addedTo',
-            id: 'x'
-        }],
-    },
-    keyword: 'else',
-    block {
-        exp: [ Exp2 {
-            exp: [ Exp5 {
-                numlit: '100'
-            }],
-            addop: 'addedTo',
-            id: 'x'
-        }]
-    }
-  }
-}
+Program {
+  statements:
+   Block {
+     statements:
+      [ VariableDeclaration { ids: 'x', initializers: NumericLiteral { value: 2 } },
+        IfStatement {
+          cases:
+           BinaryExpression {
+             op: 'equals',
+             left: IdentifierExpression { id: 'y' },
+             right: NumericLiteral { value: 2 } },
+          alternate:
+           Block {
+             statements:
+              [ [ '\n' ],
+                BinaryExpression {
+                  op: 'addedTo',
+                  left: NumericLiteral { value: 2 },
+                  right: IdentifierExpression { id: 'x' } } ] } } ] } }
