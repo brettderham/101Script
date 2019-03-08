@@ -1,15 +1,15 @@
-Stmt {
-    keyword: 'if',
-        exp: [ Exp1 {
-            id: 'x',
-            relop: '==',
-            id: 'y'
-        }],
-        Block {
-            exp: [ SimpleStmt {
-                id: 'x',
-                relop: '=',
-                id: 'z'
-            }]
-        }
-}
+Program {
+  statements:
+   Block {
+     statements:
+      [ IfStatement {
+          cases:
+           BinaryExpression {
+             op: '==',
+             left: IdentifierExpression { id: 'x' },
+             right: IdentifierExpression { id: 'y' } },
+          alternate:
+           Block {
+             statements:
+              [ [ '\n' ],
+                VariableDeclaration { ids: 'z', initializers: IdentifierExpression { id: 'x' } } ] } } ] 

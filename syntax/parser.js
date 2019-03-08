@@ -9,7 +9,6 @@ const AssignmentStatement = require('../ast/assignment-statement');
 const BreakStatement = require('../ast/break-statement');
 const ReturnStatement = require('../ast/return-statement');
 const IfStatement = require('../ast/if-statement');
-const Case = require('../ast/case');
 const LoopStatement = require('../ast/loop-statement');
 const WhileStatement = require('../ast/while-statement');
 const CallStatement = require('../ast/call-statement');
@@ -60,8 +59,8 @@ const astGenerator = grammar.createSemantics().addOperation('ast', {
     return new LoopStatement(test.ast(), body.ast());
   },
 
-  Stmt_if(_1, _2, firstTest, _3, _4, body, _5, newline, _6, _7, moreTests, _8, _9, moreBody, _10, _11, moreNewline, _12, alternate, _13) {
-    return new IfStatement(firstTest.ast(), body.ast(), newline.ast(), moreTests.ast(), moreBody.ast(), moreNewline.ast(), alternate.ast());
+  Stmt_if(_1, _2, firstTest, _3, _4, body, _5, _6, _7, _8, moreTests, _9, _10, moreBody, _11, _12, _13, _14, alternate, _15) {
+    return new IfStatement(firstTest.ast(), body.ast(), moreTests.ast(), moreBody.ast(), alternate.ast());
   },
 
   Stmt_function(_1, id, _2, params, _3, _4, body, _5) {

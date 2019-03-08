@@ -36,13 +36,13 @@ IOIScript {
   Call        =  VarExp "(" Args ")"
 
   ClassDecl   =  "class" id ("extends" id)? ":" Block* ";"   -- class
-  NewObject   =  "object" id ":" Args ";"                -- object
+  NewObject   =  "object" id ":" (Args | Stmt) ";"                -- object
   VarExp      =  VarExp "[" Exp "]"                      -- subscripted
               |  id                                      -- simple
   VarExps     =  NonemptyListOf<VarExp, ",">
   Param       =  id ("=" Exp)?
   Params      =  ListOf<Param, ",">
-  Arg         =  (id ":")? Stmt
+  Arg         =  ((id ":")? Stmt) 
   Args        =  ListOf<Arg, ";">
 
   keyword     =  ("loopWhile" | "if" | "else" | "else" | "function" | "return" | "print"
