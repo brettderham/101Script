@@ -51,7 +51,7 @@ else:                           } else {
 ```
 x = 0                       let x = 0
 loop(5):                    while(x < 5) {
-    x++                         x++
+    x += 1                      x++
     print(x);                   console.log(x)
                             }
 ```
