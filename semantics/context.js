@@ -14,7 +14,10 @@ const Parameter = require('../ast/parameter');
 
 class Context {
   constructor({ parent = null, currentFunction = null, inLoop = false } = {}) {
-    Object.assign(this, { parent, currentFunction, inLoop, declarations: Object.create(null) });
+    Object.assign(this, 
+      {
+        parent, currentFunction, inLoop, declarations: Object.create(null),
+      });
   }
 
   createChildContextForFunctionBody(currentFunction) {
@@ -57,20 +60,20 @@ class Context {
       return this.declarations[id];
     } else if (this.parent === null) {
       throw new Error(`Identifier ${id} has not been declared`);
-    } else {
+    }
       return this.parent.lookup(id);
     }
   }
 
-  assertInFunction(message) {
+  assertInFunction(message) { // eslint-disable-line class-methods-use-this
     if (!this.currentFunction) {
-      throw new Error(message);
+      throw new Error(message)
     }
   }
 
   assertIsFunction(entity) { // eslint-disable-line class-methods-use-this
     if (entity.constructor !== FunctionObject) {
-      throw new Error(`${entity.id} is not a function`);
+      throw new Error(`${entity.id} is not a function`)
     }
   }
 }
