@@ -4,11 +4,7 @@ module.exports = class IfStatement {
   }
 
   analyze(context) {
-    this.tests.forEach(test => test.analyze(context));
-    this.consequents.forEach((block) => {
-      const blockContext = context.createChildContextForBlock();
-      block.forEach(statement => statement.analyze(blockContext));
-    });
+    this.cases.forEach(c => c.analyze(context.createChildContextForBlock()));
     if (this.alternate) {
       this.alternate.forEach(s => s.analyze(context.createChildContextForBlock()));
     }
