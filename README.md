@@ -79,6 +79,7 @@ function multiplyByThree(x):        function multiplyByThree(x) {
 ```
 
 ### Objects
+
 ```
 Shape =:                        let shape = {
     name = "circle",                name: "circle",
@@ -89,9 +90,37 @@ Shape =:                        let shape = {
 ```
 
 **piEstimate 101Script:**  
-![101pi](https://github.com/brettderham/101Script/blob/master/resources/pie101.png "101pi")  
+
+```
+function piEstimate(precision):
+    inside = 0  // or inside gets 0
+    loop(precision):
+        x = random(0,1)     //or x gets random(0,1)
+        y = random(0,1)     //or y gets random(0,1)
+        if((x^2+y^2)^0.5 lessThan 1):   //or < 1
+            1 addedTo inside;
+    ;
+    piEstimate = 4*inside/precision
+    return piEstimate;
+
+    // This example program shows how one may mix word and traditional operations
+```
+
 **piEstimate JS:**  
-![jspi](https://github.com/brettderham/101Script/blob/master/resources/pieJS.png "jspi")  
+
+```
+function piEstimate(precision) {
+    let inside = 0
+    for (i = 0; i < precision; i++) {
+        x = Math.random()
+        y = Math.random()
+        if (((x**2 + y**2)**0.5) < 1) {
+            inside++
+        }
+    }
+    return 4*inside / precision
+}
+```
 
 ### Alternative Operations
 
@@ -125,8 +154,74 @@ remainder       %
 
 #### ChangeMaker Using Symbols
 
-![SymbolMethod](https://github.com/brettderham/101Script/blob/master/resources/changeMaker101a.png "Symbol Method")
+```
+function USChangeMaker(cents):
+    if(cents > 99):
+        cents = 99;
+    else:
+        break
+    ;
+
+    quarters = 0
+    dimes = 0
+    nickels = 0
+    pennies = 0
+
+    loopWhile(cents >= 25):
+        quarters += 1
+        cents -= 25;
+
+    loopWhile(cents >= 10):
+        dimes += 1
+        cents -= 10;
+
+    loopWhile(cents >= 5):
+        nickels += 1
+        cents -= 5;
+
+    loopWhile(cents >= 1):
+        pennies += 1
+        cents -= 1;
+
+    return quarters + " " + dimes + " " + nickels + " " + pennies;
+```
 
 #### ChangeMaker Using String Representation
 
-![StringMethod](https://github.com/brettderham/101Script/blob/master/resources/changeMaker101b.png "String Method")
+```
+function USChangeMaker(cents):
+
+    if(cents greaterThan 99):
+        cents gets 99
+    else:
+        break
+    ;
+
+    quarters gets 0
+    dimes gets 0
+    nickels 0
+    pennies 0
+
+    loopWhile(cents greaterOrEq 25):
+        1 addedTo quarters
+        25 subtractedFrom cents
+    ;
+
+    loopWhile(cents greaterOrEq 10):
+        1 addedTo dimes
+        10 subtractedFrom cents
+    ;
+
+    loopWhile(cents greaterOrEq 5):
+        1 addedTo nickels
+        5 subtractedFrom cents
+    ;
+
+    loopWhile(cents greaterOrEq 1):
+        1 addedTo pennies
+        1 subtractedFrom cents
+    ;
+
+    return quarters + " " + dimes + " " + nickels + " " + pennies
+;
+```
