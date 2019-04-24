@@ -1,0 +1,2 @@
+function multiplyByThree(x):
+    return x * 3;
