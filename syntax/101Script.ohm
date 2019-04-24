@@ -4,9 +4,9 @@ IOIScript {
   Stmt        =  SimpleStmt newline                      -- simple
               |  "loopWhile" "(" Exp ")" ":" Block ";"   -- while
               |  "loop" "(" Exp ")" ":" Block ";"        -- loop
-              |  "if" "(" Exp ")" ":" Block ";" newline
-                 ("else if" "(" Exp ")"":" Block ";")* newline
-                 ("else" ":" Block ";")?                 -- if
+              |  "if" "(" Exp ")" ":" Block newline
+                 ("else if" "(" Exp ")"":" Block)* newline
+                 ("else" ":" Block)? ";"                 -- if
               |  "function" id "(" Params ")" ":" Block ";"           -- function
   SimpleStmt  =  id ("=" | "gets") Exp                              -- vardecl
               |  VarExps ("=" | "gets") Exp                          -- assign
@@ -32,17 +32,19 @@ IOIScript {
               |  Call
               |  VarExp
               |  "(" Exp ")"                             -- parens
-              |  NewObject                              
+              |  NewObject
   Call        =  VarExp "(" Args ")"
 
-  ClassDecl   =  "class" id ("extends" id)? ":" Block* ";"   -- class
-  NewObject   =  "object" id ":" (Args | Stmt) ";"                -- object
+  ClassDecl   =  "class" id ("extends" id)? ":" (Field | Method) ";"   -- class
+  NewObject   =  "object" id ":" (Field | Method ) ";"                -- object
   VarExp      =  VarExp "[" Exp "]"                      -- subscripted
               |  id                                      -- simple
   VarExps     =  NonemptyListOf<VarExp, ",">
   Param       =  id ("=" Exp)?
   Params      =  ListOf<Param, ",">
-  Arg         =  ((id ":")? Stmt) 
+  Field       =  id ":" Exp
+  Method      =  id "(" Params ")" ":" Block ";"
+  Arg         =  ((id ":")? Exp)
   Args        =  ListOf<Arg, ";">
 
   keyword     =  ("loopWhile" | "if" | "else" | "else" | "function" | "return" | "print"
@@ -58,7 +60,7 @@ IOIScript {
   addop       =  "+" | "-" | "addedTo" | "subtractedFrom"
   relop       =  "<=" | "<" | "==" | "!=" | ">=" | ">"
               |  "lessOrEq" | "lessThan" | "equals" | "notEqual" | "greaterOrEq" | "greaterThan"
-  mulop       =  "*" | "/" | "%" | "^" | "multipliedTo" | "dividedFrom" | "remainder" 
+  mulop       =  "*" | "/" | "%" | "^" | "multipliedTo" | "dividedFrom" | "remainder"
   prefixop    =  "-" | "not"
   newline     =  "\n"+
   space      :=  " " | "\t" | comment

@@ -1,2 +1,4 @@
 function multiplyByThree(x):
-    return x * 3;
+    x = 19
+    return x * 3
+;
