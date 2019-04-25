@@ -14,7 +14,7 @@ const Parameter = require('../ast/parameter');
 
 class Context {
   constructor({ parent = null, currentFunction = null, inLoop = false } = {}) {
-    Object.assign(this, 
+    Object.assign(this,
       {
         parent, currentFunction, inLoop, declarations: Object.create(null),
       });
@@ -58,7 +58,7 @@ class Context {
   lookup(id) {
     if (id in this.declarations) {
       return this.declarations[id];
-    } else if (this.parent === null) {
+    } else if (this.parent === null) { // eslint-disable-line
       throw new Error(`Identifier ${id} has not been declared`);
     }
     return this.parent.lookup(id);
@@ -78,7 +78,7 @@ class Context {
 }
 
 Context.INITIAL = new Context();
-// new FunctionDeclaration('print', [new Parameter('_', null)], null).analyze(Context.INITIAL);
-// new FunctionDeclaration('sqrt', [new Parameter('_', null)], null).analyze(Context.INITIAL);
+new FunctionDeclaration('print', [new Parameter('_', null)], null).analyze(Context.INITIAL);
+new FunctionDeclaration('sqrt', [new Parameter('_', null)], null).analyze(Context.INITIAL);
 
 module.exports = Context;

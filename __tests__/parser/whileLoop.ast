@@ -1,5 +1,5 @@
 Program {
-  statements:
+  body:
    Block {
      statements:
       [ VariableDeclaration { ids: 'x', initializers: NumericLiteral { value: 0 } },
@@ -13,5 +13,9 @@ Program {
            Block {
              statements:
               [ [ '\n' ],
-                IdentifierExpression { id: 'doStuff' },
-                IdentifierExpression { id: 'x' } ] } } ] } }
+                CallStatement {
+                  call:
+                   Call {
+                     callee: IdentifierExpression { id: 'doStuff' },
+                     args:
+                      [ Argument { id: null, expression: IdentifierExpression { id: 'x' } } ] } } ] } } ] } }

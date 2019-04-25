@@ -4,8 +4,8 @@ IOIScript {
   Stmt        =  SimpleStmt newline                      -- simple
               |  "loopWhile" "(" Exp ")" ":" Block ";"   -- while
               |  "loop" "(" Exp ")" ":" Block ";"        -- loop
-              |  "if" "(" Exp ")" ":" Block newline
-                 ("else if" "(" Exp ")"":" Block)* newline
+              |  "if" "(" Exp ")" ":" Block 
+                 ("else if" "(" Exp ")"":" Block)* 
                  ("else" ":" Block)? ";"                 -- if
               |  "function" id "(" Params ")" ":" Block ";"           -- function
   SimpleStmt  =  id ("=" | "gets") Exp                              -- vardecl
@@ -35,8 +35,8 @@ IOIScript {
               |  NewObject
   Call        =  VarExp "(" Args ")"
 
-  ClassDecl   =  "class" id ("extends" id)? ":" (Field | Method) ";"   -- class
-  NewObject   =  "object" id ":" (Field | Method ) ";"                -- object
+  ClassDecl   =  "class" id ("extends" id)? ":" (Field | Method | newline)+ ";"   -- class
+  NewObject   =  "object" id ":" (Field | Method | newline)+ ";"                -- object
   VarExp      =  VarExp "[" Exp "]"                      -- subscripted
               |  id                                      -- simple
   VarExps     =  NonemptyListOf<VarExp, ",">

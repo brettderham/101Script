@@ -1,8 +1,11 @@
 Program {
-  statements:
+  body:
    Block {
      statements:
       [ VariableDeclaration {
           ids: 'x',
-          initializers: IdentifierExpression { id: 'halfTheString' } },
-        StringLiteral { value: '"Poop"' } ] } }
+          initializers:
+           Call {
+             callee: IdentifierExpression { id: 'halfTheString' },
+             args:
+              [ Argument { id: null, expression: StringLiteral { value: '"Poop"' } } ] } } ] } }

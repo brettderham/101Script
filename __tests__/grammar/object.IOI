@@ -2,13 +2,4 @@ object Shape:
     name: "circle"
     radius: 3
 ;
-print(Shape.name)
-
-class Circle:
-  radius: 10
-  function area():
-    return self.radius * pi * pi
-  ;
-;
-
 

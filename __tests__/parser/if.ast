@@ -1,5 +1,5 @@
 Program {
-  statements:
+  body:
    Block {
      statements:
       [ IfStatement {
@@ -12,4 +12,4 @@ Program {
            Block {
              statements:
               [ [ '\n' ],
-                VariableDeclaration { ids: 'z', initializers: IdentifierExpression { id: 'x' } } ] } } ] 
+                VariableDeclaration { ids: 'z', initializers: IdentifierExpression { id: 'x' } } ] } } ] } }

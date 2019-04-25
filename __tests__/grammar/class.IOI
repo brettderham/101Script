@@ -1,3 +1,4 @@
 class Tester:
-  x = 5
-  y = "dog";
+  x: 5
+  y: "dog"
+  ;

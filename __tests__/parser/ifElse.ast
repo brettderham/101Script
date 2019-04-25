@@ -1,5 +1,5 @@
 Program {
-  statements:
+  body:
    Block {
      statements:
       [ VariableDeclaration { ids: 'x', initializers: NumericLiteral { value: 2 } },
@@ -16,4 +16,5 @@ Program {
                 BinaryExpression {
                   op: 'addedTo',
                   left: NumericLiteral { value: 2 },
-                  right: IdentifierExpression { id: 'x' } } ] } } ] } }
+                  right: IdentifierExpression { id: 'x' } },
+                [ '\n' ] ] } } ] } }

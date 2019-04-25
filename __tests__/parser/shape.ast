@@ -1,10 +1,12 @@
-NewObject {
-    id: 'shape'
-    args:
-        [ SimpleStmt {
-            id: 'name'
-            exp: [ Exp5 { strlit: circle } ] } ],
-          SimpleStmtn {
-            id: 'radius'
-            exp: [ Exp5 { numlit: 3 } ] ]
-}
+Program {
+  body:
+   Block {
+     statements:
+      [ FunctionObject {
+          id: 'shape',
+          params:
+           [ [ '\n' ],
+             Field { id: 'name', expression: StringLiteral { value: '"circle"' } },
+             [ '\n' ],
+             Field { id: 'radius', expression: NumericLiteral { value: 3 } } ],
+          body: undefined } ] } }

@@ -22,6 +22,8 @@ const IdentifierExpression = require('../ast/identifier-expression');
 const SubscriptedExpression = require('../ast/subscripted-expression');
 const Call = require('../ast/call-expression');
 const Parameter = require('../ast/parameter');
+const Field = require('../ast/field');
+const Method = require('../ast/method');
 const Argument = require('../ast/argument');
 const BooleanLiteral = require('../ast/boolean-literal');
 const NumericLiteral = require('../ast/numeric-literal');
@@ -42,7 +44,7 @@ function arrayToNullable(a) {
 const astGenerator = grammar.createSemantics().addOperation('ast', {
   Program(_1, body, _2) {
     const p = new Program(body.ast());
-    console.log(util.inspect(p, { depth: null }));
+    //  console.log(util.inspect(p, { depth: null }));
     return p;
   },
 
@@ -62,7 +64,7 @@ const astGenerator = grammar.createSemantics().addOperation('ast', {
     return new LoopStatement(test.ast(), body.ast());
   },
 
-  Stmt_if(_1, _2, firstTest, _3, _4, body, _5, _6, _7, _8, moreTests, _9, _10, moreBody, _11, _12, _13, _14, alternate, _15) {
+  Stmt_if(_1, _2, firstTest, _3, _4, body, _5, _6, moreTests, _8, _9, moreBody, _10, _11, alternate, _12) {
     return new IfStatement(firstTest.ast(), body.ast(), moreTests.ast(), moreBody.ast(), alternate.ast());
   },
 
@@ -144,6 +146,14 @@ const astGenerator = grammar.createSemantics().addOperation('ast', {
 
   Param(id, _, exp) {
     return new Parameter(id.ast(), unpack(exp.ast()));
+  },
+
+  Field(id, _, exp) {
+    return new Field(id.ast(), exp.ast());
+  },
+
+  Method(id, _1, params, _2, _3, body, _4) {
+    return new Method(id.ast(), params.ast(), body.ast());
   },
 
   Arg(id, _, exp) {
