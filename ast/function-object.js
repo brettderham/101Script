@@ -29,7 +29,7 @@ module.exports = class FunctionObject {
     // variable with the same name as the function inside the function, you'll
     // shadow it, which would probably be not a good idea.
     if (this.body) {
-      this.body.forEach(s => s.analyze(context));
+      this.forEach(s => s.analyze(context));
     }
   }
 };

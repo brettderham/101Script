@@ -4,6 +4,7 @@ module.exports = class Block {
   }
 
   analyze(context) {
-    this.body.statements.forEach(s => s.analyze(context));
+    //this.body.statements.forEach(s => s.analyze(context));
+    this.statements.forEach(s => s.analyze(context));
   }
 };
