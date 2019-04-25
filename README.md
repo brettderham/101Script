@@ -43,13 +43,13 @@ if(x > 5):                      if(x > 5) {
 else if(x < 3):                 } else if(x < 3) {
 	print(y)		    console.log(y)
 else:                           } else {
-	print(z);		    console.log(z);
-                                }
+	print(z)		    console.log(z);
+;                               }
 ```
 
 ### Basic Loop Statements
 ```
-let x = 0                   x = 0
+let x = 0                   let x = 0
 loop(5):                    while(x < 5) {
     x += 1                      x++
     print(x)                    console.log(x)
