@@ -2,9 +2,9 @@ Program {
   body:
    Block {
      statements:
-      [ VariableDeclaration {
-          ids: 'x',
-          initializers:
+      [ AssignmentStatement {
+          targets: [ IdentifierExpression { id: 'x' } ],
+          sources:
            Call {
              callee: IdentifierExpression { id: 'halfTheString' },
              args:

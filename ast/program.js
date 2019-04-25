@@ -7,6 +7,6 @@ module.exports = class Program {
 
   analyze() {
     const context = new Context({ parent: Context.INITIAL });
-    this.body.statements.forEach(s => s.analyze(context));
+    this.body.analyze(context);
   }
 };

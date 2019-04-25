@@ -4,9 +4,9 @@ module.exports = class Call {
   }
 
   analyze(context) {
-    this.callee.analyze(context);
-    context.assertIsFunction(this.callee.referent);
-    this.checkArgumentMatching(this.callee.referent);
+    this.callee = context.lookup(this.callee);
+    context.assertIsFunction(this.callee);
+    this.checkArgumentMatching(this.callee);
     this.args.forEach(arg => arg.analyze(context));
   }
 };

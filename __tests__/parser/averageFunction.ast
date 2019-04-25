@@ -16,8 +16,9 @@ Program {
                 statements:
                  [ [ '\n' ],
                    VariableDeclaration {
-                     ids: 'result',
-                     initializers:
+                     kind: 'let',
+                     id: 'result',
+                     initializer:
                       BinaryExpression {
                         op: '+',
                         left:

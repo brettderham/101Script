@@ -12,4 +12,6 @@ Program {
            Block {
              statements:
               [ [ '\n' ],
-                VariableDeclaration { ids: 'z', initializers: IdentifierExpression { id: 'x' } } ] } } ] } }
+                AssignmentStatement {
+                  targets: [ IdentifierExpression { id: 'z' } ],
+                  sources: IdentifierExpression { id: 'x' } } ] } } ] } }

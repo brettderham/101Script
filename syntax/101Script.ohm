@@ -8,7 +8,7 @@ IOIScript {
                  ("else if" "(" Exp ")"":" Block)* 
                  ("else" ":" Block)? ";"                 -- if
               |  "function" id "(" Params ")" ":" Block ";"           -- function
-  SimpleStmt  =  id ("=" | "gets") Exp                              -- vardecl
+  SimpleStmt  =  ("let" | "const") id ("=" | "gets") Exp                              -- vardecl
               |  VarExps ("=" | "gets") Exp                          -- assign
               |  Call                                    -- call
               |  "break"                                 -- break
@@ -50,7 +50,8 @@ IOIScript {
   keyword     =  ("loopWhile" | "if" | "else" | "else" | "function" | "return" | "print"
               |  "break" | "and" | "or" | "not" | "true" | "false" |  "lessOrEq" | "lessThan"
               | "equals" | "notEqual" | "greaterOrEq" | "greaterThan" | "addedTo" | "multipliedTo"
-              | "subtractedFrom" | "dividedFrom" | "gets" | "remainder" | "class" | "extends" | "object") ~idrest
+              | "subtractedFrom" | "dividedFrom" | "gets" | "remainder" | "class" | "extends" | "object" 
+              | "let" | "const") ~idrest
   id          =  ~keyword ("_" | letter) idrest*
   idrest      =  "_" | alnum
   numlit      =  digit+ ("." digit+)? (("E" | "e") ("+" | "-")? digit+)?

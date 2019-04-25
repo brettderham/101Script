@@ -2,4 +2,6 @@ Program {
   body:
    Block {
      statements:
-      [ VariableDeclaration { ids: 'x', initializers: NumericLiteral { value: 32 } } ] } }
+      [ AssignmentStatement {
+          targets: [ IdentifierExpression { id: 'x' } ],
+          sources: NumericLiteral { value: 32 } } ] } }

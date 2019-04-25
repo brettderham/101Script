@@ -2,7 +2,9 @@ Program {
   body:
    Block {
      statements:
-      [ VariableDeclaration { ids: 'x', initializers: NumericLiteral { value: 2 } },
+      [ AssignmentStatement {
+          targets: [ IdentifierExpression { id: 'x' } ],
+          sources: NumericLiteral { value: 2 } },
         IfStatement {
           cases:
            BinaryExpression {

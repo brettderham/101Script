@@ -2,9 +2,9 @@ Program {
   body:
    Block {
      statements:
-      [ VariableDeclaration {
-          ids: 'y',
-          initializers:
+      [ AssignmentStatement {
+          targets: [ IdentifierExpression { id: 'y' } ],
+          sources:
            BinaryExpression {
              op: '/',
              left:

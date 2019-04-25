@@ -2,5 +2,8 @@
   body:
    Block {
      statements:
-      [ VariableDeclaration { ids: 'x', initializers: NumericLiteral { value: 0 } },
+      [ VariableDeclaration {
+          kind: 'let',
+          id: 'x',
+          initializer: NumericLiteral { value: 0 } },
         LoopStatement { statements: NumericLiteral { value: 5 } } ] } }

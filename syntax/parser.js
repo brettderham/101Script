@@ -48,8 +48,8 @@ const astGenerator = grammar.createSemantics().addOperation('ast', {
     return p;
   },
 
-  Block(stmt) {
-    return new Block(stmt.ast());
+  Block(stmts) {
+    return new Block(stmts.ast());
   },
 
   Stmt_simple(statement, _) {
@@ -72,8 +72,8 @@ const astGenerator = grammar.createSemantics().addOperation('ast', {
     return new FunctionDeclaration(id.ast(), params.ast(), body.ast());
   },
 
-  SimpleStmt_vardecl(id, _1, e) {
-    return new VariableDeclaration(id.ast(), e.ast());
+  SimpleStmt_vardecl(kind, id, _1, e) {
+    return new VariableDeclaration(kind.ast(), id.ast(), e.ast());
   },
 
   SimpleStmt_assign(v, _, e) {
@@ -176,7 +176,7 @@ const astGenerator = grammar.createSemantics().addOperation('ast', {
     return new NumericLiteral(+this.sourceString);
   },
 
-  strlit(_1, chars, _6) {
+  strlit(_1, chars, _2) {
     return new StringLiteral(this.sourceString);
   },
 
