@@ -25,23 +25,23 @@ Repo for Riley Persily, Thomas Ochsner, Simon Wroblewski, Kea Braekman, and Bret
 
 ### Variable Declarations
 ```
-name = "Thomas"                 let name = "Thomas"
-age = 21                        let age = 21
-sexy = true                     let sexy = true
+const name = "Thomas"           const name = "Thomas"
+let age = 21                    let age = 21
+let sexy = true                 let sexy = true
 ```
 
 ### Arithmetic
 ```
-x = (10*(3^2))/2                let x = (10*((3 ** 2))/2
-y = 5 + 3 - 2                   let y = 5 + 3 - 2
+x = (10*(3^2))/2                x = (10*((3 ** 2))/2
+y = 5 + 3 - 2                   y = 5 + 3 - 2
 ```
 
 ### If Statements 
 ```
 if(x > 5):                      if(x > 5) {
-	print(x);		    console.log(x)
+	print(x)		    console.log(x)
 else if(x < 3):                 } else if(x < 3) {
-	print(y);		    console.log(y)
+	print(y)		    console.log(y)
 else:                           } else {
 	print(z);		    console.log(z);
                                 }
@@ -49,19 +49,19 @@ else:                           } else {
 
 ### Basic Loop Statements
 ```
-x = 0                       let x = 0
+let x = 0                   x = 0
 loop(5):                    while(x < 5) {
     x += 1                      x++
-    print(x);                   console.log(x)
-                            }
+    print(x)                    console.log(x)
+;                           }
 ```
 
 ### While Statements
 ```
-y = 0                       let y = 0
+let y = 0                   let y = 0
 loopWhile(y < 8):           while(y < 8) {
-    f(y);                       f(y)
-                            }
+    f(y)                        f(y)
+;                           }
 ```
 
 ### Functions 
@@ -81,9 +81,9 @@ function multiplyByThree(x):        function multiplyByThree(x) {
 ### Objects
 
 ```
-Shape =:                        let shape = {
-    name = "circle",                name: "circle",
-    radius = 3;                     radius: 3
+object Shape:                   let shape = {
+    name: "circle"                 name: "circle",
+    radius: 3;                     radius: 3
                                 }
     print(Shape.name)           console.log(Shape.name)
 
@@ -93,15 +93,15 @@ Shape =:                        let shape = {
 
 ```
 function piEstimate(precision):
-    inside = 0  // or inside gets 0
+    let inside = 0  // or inside gets 0
     loop(precision):
-        x = random(0,1)     //or x gets random(0,1)
-        y = random(0,1)     //or y gets random(0,1)
+       let x = random(0,1)     //or x gets random(0,1)
+        let y = random(0,1)     //or y gets random(0,1)
         if((x^2+y^2)^0.5 lessThan 1):   //or < 1
             1 addedTo inside;
     ;
-    piEstimate = 4*inside/precision
-    return piEstimate;
+    let piEstimt = 4*inside/precision
+    return piEstimt;
 
     // This example program shows how one may mix word and traditional operations
 ```
@@ -162,10 +162,10 @@ function USChangeMaker(cents):
         break
     ;
 
-    quarters = 0
-    dimes = 0
-    nickels = 0
-    pennies = 0
+    let quarters = 0
+    let dimes = 0
+    let nickels = 0
+    let pennies = 0
 
     loopWhile(cents >= 25):
         quarters += 1
@@ -197,10 +197,10 @@ function USChangeMaker(cents):
         break
     ;
 
-    quarters gets 0
-    dimes gets 0
-    nickels 0
-    pennies 0
+    let quarters gets 0
+    let dimes gets 0
+    let nickels gets 0
+    let pennies gets 0
 
     loopWhile(cents greaterOrEq 25):
         1 addedTo quarters
