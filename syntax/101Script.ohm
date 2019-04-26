@@ -28,12 +28,12 @@ IOIScript {
   Exp5        =  boollit
               |  numlit
               |  strlit
-              |  "[" ListOf<Exp, ","> "]"                -- list
+              |  "[" ListOf<Exp, ","> "]"               -- list           
               |  Call
               |  VarExp
               |  "(" Exp ")"                             -- parens
               |  NewObject
-  Call        =  Stmt "(" Args ")"
+  Call        =  VarExp "(" Args ")"
 
   ClassDecl   =  "class" id ("extends" id)? ":" (Field | Method | newline)+ ";"   -- class
   NewObject   =  "object" id ":" (Field | Method | newline)+ ";"                -- object
