@@ -1,4 +1,4 @@
-let underage = true
-while(underage):
-   1 addedTo underage
+let age = 0
+while(age < 21):
+   1 addedTo age
 print("You are no longer underage")
