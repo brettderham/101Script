@@ -33,7 +33,7 @@ IOIScript {
               |  VarExp
               |  "(" Exp ")"                             -- parens
               |  NewObject
-  Call        =  VarExp "(" Args ")"
+  Call        =  Stmt "(" Args ")"
 
   ClassDecl   =  "class" id ("extends" id)? ":" (Field | Method | newline)+ ";"   -- class
   NewObject   =  "object" id ":" (Field | Method | newline)+ ";"                -- object
