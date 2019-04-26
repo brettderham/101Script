@@ -1,4 +1,5 @@
 let age = 0
 loopWhile(age < 21):
-   1 addedTo age;
+   1 addedTo age
+;
 print("You are no longer underage")
