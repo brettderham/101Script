@@ -9,7 +9,7 @@ IOIScript {
                  ("else" ":" Block)? ";"                 -- if
               |  "function" id "(" Params ")" ":" Block ";"           -- function
   SimpleStmt  =  ("let" | "const") id ("=" | "gets") Exp                              -- vardecl
-              |  VarExps ("=" | "gets") Exp                          -- assign
+              |  VarExp ("=" | "gets") Exp                          -- assign
               |  Call                                    -- call
               |  "break"                                 -- break
               |  "return" Exp?                           -- return

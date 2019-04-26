@@ -3,7 +3,7 @@ Program {
    Block {
      statements:
       [ AssignmentStatement {
-          targets: [ IdentifierExpression { id: 'x' } ],
+          target: IdentifierExpression { id: 'x' },
           sources: NumericLiteral { value: 2 } },
         IfStatement {
           cases:

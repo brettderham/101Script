@@ -1,10 +1,10 @@
 module.exports = class AssignmentStatement {
-  constructor(targets, sources) {
-    Object.assign(this, { targets, sources });
+  constructor(target, sources) {
+    Object.assign(this, { target, sources });
   }
 
   analyze(context) {
     this.sources.analyze(context);
-    this.targets.analyze(context);
+    this.target.lookup(context.id);
   }
 };

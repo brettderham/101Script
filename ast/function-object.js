@@ -6,7 +6,7 @@ module.exports = class FunctionObject {
   analyze(context) {
     this.params.forEach(p => p.analyze(context));
     if (this.body) {
-      this.body.forEach(s => s.analyze(context));
+      this.body.statements.forEach(s => s.analyze(context));
     }
   }
 };
