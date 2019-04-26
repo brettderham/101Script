@@ -5,7 +5,7 @@ module.exports = class AssignmentStatement {
 
   analyze(context) {
       this.sources.analyze(context);
-      this.target.analyze(context);
+      this.target.lookup(context.id);
 
       if (this.target == id) {
         this.referent = this.referent.analyze();
