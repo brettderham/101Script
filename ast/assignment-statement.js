@@ -4,11 +4,7 @@ module.exports = class AssignmentStatement {
   }
 
   analyze(context) {
-    console.log("this.targets"+ this.targets);
-    if (this.targets.length !== this.sources.length) {
-      throw new Error('Number of variables does not equal number of expressions');
-    }
-    this.sources.forEach(e => e.analyze(context));
-    this.targets.forEach(v => v.analyze(context));
+    this.sources.analyze(context);
+    this.targets.analyze(context);
   }
 };

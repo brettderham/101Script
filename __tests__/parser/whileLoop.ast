@@ -15,8 +15,7 @@ Program {
           body:
            Block {
              statements:
-              [ [ '\n' ],
-                CallStatement {
+              [ CallStatement {
                   call:
                    Call {
                      callee: IdentifierExpression { id: 'doStuff' },

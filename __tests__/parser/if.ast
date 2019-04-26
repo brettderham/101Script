@@ -11,7 +11,6 @@ Program {
           alternate:
            Block {
              statements:
-              [ [ '\n' ],
-                AssignmentStatement {
+              [ AssignmentStatement {
                   targets: [ IdentifierExpression { id: 'z' } ],
                   sources: IdentifierExpression { id: 'x' } } ] } } ] } }

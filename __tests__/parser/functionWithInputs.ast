@@ -14,8 +14,7 @@ Program {
              body:
               Block {
                 statements:
-                 [ [ '\n' ],
-                   ReturnStatement {
+                 [ ReturnStatement {
                      returnValue:
                       BinaryExpression {
                         op: '+',

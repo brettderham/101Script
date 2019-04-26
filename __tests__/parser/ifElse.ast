@@ -14,9 +14,7 @@ Program {
           alternate:
            Block {
              statements:
-              [ [ '\n' ],
-                BinaryExpression {
+              [ BinaryExpression {
                   op: 'addedTo',
                   left: NumericLiteral { value: 2 },
-                  right: IdentifierExpression { id: 'x' } },
-                [ '\n' ] ] } } ] } }
+                  right: IdentifierExpression { id: 'x' } } ] } } ] } }

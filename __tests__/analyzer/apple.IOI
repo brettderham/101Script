@@ -1,0 +1,4 @@
+function apple():
+    let apples = "apples"
+    return apples
+;

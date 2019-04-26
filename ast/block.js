@@ -1,6 +1,6 @@
 module.exports = class Block {
   constructor(statements) {
-    this.statements = statements;
+    this.statements = statements.filter(s => !Array.isArray(s));
   }
 
   analyze(context) {

@@ -14,8 +14,7 @@ Program {
              body:
               Block {
                 statements:
-                 [ [ '\n' ],
-                   VariableDeclaration {
+                 [ VariableDeclaration {
                      kind: 'let',
                      id: 'result',
                      initializer:

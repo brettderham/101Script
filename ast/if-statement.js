@@ -5,7 +5,7 @@ module.exports = class IfStatement {
 
   analyze(context) {
     //console.log("this.cases = "+this.cases[0]);
-    this.something.forEach(c => c.analyze(context.createChildContextForBlock()));
+    this.cases.forEach(c => c.analyze(context.createChildContextForBlock()));
     if (this.alternate) {
       this.alternate.forEach(s => s.analyze(context.createChildContextForBlock()));
     }

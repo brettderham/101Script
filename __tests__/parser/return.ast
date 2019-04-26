@@ -11,5 +11,4 @@ Program {
              body:
               Block {
                 statements:
-                 [ [ '\n' ],
-                   ReturnStatement { returnValue: StringLiteral { value: '"Neee!!!"' } } ] } } } ] } }
+                 [ ReturnStatement { returnValue: StringLiteral { value: '"Neee!!!"' } } ] } } } ] } }
