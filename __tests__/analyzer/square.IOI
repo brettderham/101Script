@@ -1,0 +1,2 @@
+object Square:
+   area = 4;

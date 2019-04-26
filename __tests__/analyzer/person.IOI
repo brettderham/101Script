@@ -1,0 +1,3 @@
+class Person:
+   const name: "Peter"
+;
