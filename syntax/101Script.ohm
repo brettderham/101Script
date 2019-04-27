@@ -1,15 +1,15 @@
 IOIScript {
   Program     =  newline* (Block | ClassDecl) newline*
-  Block       =  (Stmt | SimpleStmt | Exp | newline )+
+  Block       =  (Stmt | Exp | newline )+
   Stmt        =  SimpleStmt newline                      -- simple
               |  "loopWhile" "(" Exp ")" ":" Block ";"   -- while
               |  "loop" "(" Exp ")" ":" Block ";"        -- loop
               |  "if" "(" Exp ")" ":" Block
                  ("else if" "(" Exp ")"":" Block)*
-                 ("else" ":" Block)? ";"                 -- if
-              |  "function" id "(" Params ")" ":" Block ";"           -- function
-  SimpleStmt  =  ("let" | "const") id ("=" | "gets") Exp                              -- vardecl
-              |  VarExp ("=" | "gets") Exp                          -- assign
+                 ("else" ":" Block)? ";"                      -- if
+              |  "function" id "(" Params ")" ":" Block ";"   -- function
+  SimpleStmt  =  ("let" | "const") id ("=" | "gets") Exp      -- vardecl
+              |  VarExp ("=" | "gets") Exp                    -- assign
               |  Call                                    -- call
               |  "break"                                 -- break
               |  "return" Exp?                           -- return
@@ -48,7 +48,7 @@ IOIScript {
   Arg         =  ((id ":")? Exp)
   Args        =  ListOf<Arg, ";">
 
-  keyword     =  ("loopWhile" | "if" | "else" | "else" | "function" | "return" | "print"
+  keyword     =  ("loopWhile" | "if" | "else" | "else" | "function" | "return"
               |  "break" | "and" | "or" | "not" | "true" | "false" |  "lessOrEq" | "lessThan"
               | "equals" | "notEqual" | "greaterOrEq" | "greaterThan" | "addedTo" | "multipliedTo"
               | "subtractedFrom" | "dividedFrom" | "gets" | "remainder" | "class" | "extends" | "object"
