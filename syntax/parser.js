@@ -140,6 +140,10 @@ const astGenerator = grammar.createSemantics().addOperation('ast', {
     return new SubscriptedExpression(v.ast(), e.ast());
   },
 
+  VarExp_field(v, _1, e,) {
+    return new FieldExpression(v.ast(), e.ast());
+  },
+
   VarExp_simple(id) {
     return new IdentifierExpression(id.ast());
   },

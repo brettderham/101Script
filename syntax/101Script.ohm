@@ -4,8 +4,8 @@ IOIScript {
   Stmt        =  SimpleStmt newline                      -- simple
               |  "loopWhile" "(" Exp ")" ":" Block ";"   -- while
               |  "loop" "(" Exp ")" ":" Block ";"        -- loop
-              |  "if" "(" Exp ")" ":" Block 
-                 ("else if" "(" Exp ")"":" Block)* 
+              |  "if" "(" Exp ")" ":" Block
+                 ("else if" "(" Exp ")"":" Block)*
                  ("else" ":" Block)? ";"                 -- if
               |  "function" id "(" Params ")" ":" Block ";"           -- function
   SimpleStmt  =  ("let" | "const") id ("=" | "gets") Exp                              -- vardecl
@@ -28,10 +28,9 @@ IOIScript {
   Exp5        =  boollit
               |  numlit
               |  strlit
-              |  "[" ListOf<Exp, ","> "]"               -- list           
+              |  "[" ListOf<Exp, ","> "]"               -- list
               |  Call
               |  VarExp
-              |  ObjectField
               |  "(" Exp ")"                             -- parens
               |  NewObject
   Call        =  VarExp "(" Args ")"
@@ -39,12 +38,12 @@ IOIScript {
   ClassDecl   =  "class" id ("extends" id)? ":" (Field | Method | newline)+ ";"   -- class
   NewObject   =  "object" id ":" (Field | Method | newline)+ ";"                -- object
   VarExp      =  VarExp "[" Exp "]"                      -- subscripted
+              |  VarExp "." id                           -- field
               |  id                                      -- simple
   VarExps     =  NonemptyListOf<VarExp, ",">
   Param       =  id ("=" Exp)?
   Params      =  ListOf<Param, ",">
   Field       =  id ":" Exp
-  ObjectField =  id "." id
   Method      =  id "(" Params ")" ":" Block ";"
   Arg         =  ((id ":")? Exp)
   Args        =  ListOf<Arg, ";">
@@ -52,7 +51,7 @@ IOIScript {
   keyword     =  ("loopWhile" | "if" | "else" | "else" | "function" | "return" | "print"
               |  "break" | "and" | "or" | "not" | "true" | "false" |  "lessOrEq" | "lessThan"
               | "equals" | "notEqual" | "greaterOrEq" | "greaterThan" | "addedTo" | "multipliedTo"
-              | "subtractedFrom" | "dividedFrom" | "gets" | "remainder" | "class" | "extends" | "object" 
+              | "subtractedFrom" | "dividedFrom" | "gets" | "remainder" | "class" | "extends" | "object"
               | "let" | "const") ~idrest
   id          =  ~keyword ("_" | letter) idrest*
   idrest      =  "_" | alnum
