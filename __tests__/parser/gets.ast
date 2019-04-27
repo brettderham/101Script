@@ -3,5 +3,5 @@ Program {
    Block {
      statements:
       [ AssignmentStatement {
-          target: IdentifierExpression { id: 'x' },
-          sources: NumericLiteral { value: 32 } } ] } }
+          target: IdentifierExpression { referent: 'x' },
+          source: NumericLiteral { value: 32 } } ] } }

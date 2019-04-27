@@ -31,9 +31,9 @@ Program {
                                   BinaryExpression {
                                     op: '+',
                                     left: StringLiteral { value: '"Hi, my name is "' },
-                                    right: IdentifierExpression { id: 'name' } },
+                                    right: IdentifierExpression { referent: 'name' } },
                                  right: StringLiteral { value: '" I am "' } },
-                              right: IdentifierExpression { id: 'age' } },
+                              right: IdentifierExpression { referent: 'age' } },
                            right:
                             StringLiteral { value: '" years old, and my favorite color is "' } },
-                        right: IdentifierExpression { id: 'favoriteColor' } } } ] } } } ] } }             
+                        right: IdentifierExpression { referent: 'favoriteColor' } } } ] } } } ] } }

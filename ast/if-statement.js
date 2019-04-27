@@ -1,6 +1,6 @@
 module.exports = class IfStatement {
-  constructor(cases, alternate) {
-    Object.assign(this, { cases, alternate });
+  constructor(test, alternate) {
+    Object.assign(this, { test, alternate });
   }
 
 

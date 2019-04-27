@@ -1,4 +1,2 @@
 let y = 0
 y gets 5
-y = y + 5
-y = y * 2

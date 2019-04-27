@@ -1,7 +1,5 @@
 x gets 2
 if(y equals 2):
    2 addedTo x
-else if (y equals 1):
-   1 addedTo x
 else:
    100 addedTo x;

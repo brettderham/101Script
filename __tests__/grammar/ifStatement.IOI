@@ -1,7 +1,5 @@
 if(x > 5):
     return x
-else if (x < 3):
-	return y
 else:
 	return z
 ;

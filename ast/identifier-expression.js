@@ -1,9 +1,10 @@
 module.exports = class IdentifierExpression {
-  constructor(id) {
-    this.id = id;
+  constructor(referent) {
+    this.referent = referent;
   }
 
   analyze(context) {
-    this.referent = context.lookup(this.id);
+    console.log(`Looking up ${this.referent} for context ${context}`);
+    this.referent = context.lookup(this.referent);
   }
 };

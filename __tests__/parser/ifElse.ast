@@ -3,13 +3,13 @@ Program {
    Block {
      statements:
       [ AssignmentStatement {
-          target: IdentifierExpression { id: 'x' },
-          sources: NumericLiteral { value: 2 } },
+          target: IdentifierExpression { referent: 'x' },
+          source: NumericLiteral { value: 2 } },
         IfStatement {
           cases:
            BinaryExpression {
              op: 'equals',
-             left: IdentifierExpression { id: 'y' },
+             left: IdentifierExpression { referent: 'y' },
              right: NumericLiteral { value: 2 } },
           alternate:
            Block {
@@ -17,4 +17,4 @@ Program {
               [ BinaryExpression {
                   op: 'addedTo',
                   left: NumericLiteral { value: 2 },
-                  right: IdentifierExpression { id: 'x' } } ] } } ] } }
+                  right: IdentifierExpression { referent: 'x' } } ] } } ] } }

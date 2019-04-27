@@ -1,2 +1,4 @@
 if(x==y):
-   z = x;
+   z = x
+else:
+   x = z;

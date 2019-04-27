@@ -7,6 +7,6 @@ module.exports = class VariableDeclaration {
 
   analyze(context) {
     this.initializer.analyze(context);
-    context.add(this);  // context.locals[this.id] = this
+    context.add(this);
    }
 };

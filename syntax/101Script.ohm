@@ -1,12 +1,11 @@
 IOIScript {
   Program     =  newline* (Block | ClassDecl) newline*
-  Block       =  (Stmt | Exp | newline )+
+  Block       =  (Stmt | SimpleStmt | Exp | newline )+
   Stmt        =  SimpleStmt newline                      -- simple
               |  "loopWhile" "(" Exp ")" ":" Block ";"   -- while
               |  "loop" "(" Exp ")" ":" Block ";"        -- loop
               |  "if" "(" Exp ")" ":" Block
-                 ("else if" "(" Exp ")"":" Block)*
-                 ("else" ":" Block)? ";"                      -- if
+                 "else" ":" Block ";"                      -- if
               |  "function" id "(" Params ")" ":" Block ";"   -- function
   SimpleStmt  =  ("let" | "const") id ("=" | "gets") Exp      -- vardecl
               |  VarExp ("=" | "gets") Exp                    -- assign

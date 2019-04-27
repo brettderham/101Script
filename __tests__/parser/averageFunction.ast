@@ -23,12 +23,12 @@ Program {
                         left:
                          BinaryExpression {
                            op: '+',
-                           left: IdentifierExpression { id: 'x' },
-                           right: IdentifierExpression { id: 'y' } },
-                        right: IdentifierExpression { id: 'z' } } },
+                           left: IdentifierExpression { referent: 'x' },
+                           right: IdentifierExpression { referent: 'y' } },
+                        right: IdentifierExpression { referent: 'z' } } },
                    ReturnStatement {
                      returnValue:
                       BinaryExpression {
                         op: '/',
-                        left: IdentifierExpression { id: 'result' },
+                        left: IdentifierExpression { referent: 'result' },
                         right: NumericLiteral { value: 3 } } } ] } } } ] } }

@@ -10,7 +10,7 @@ Program {
           test:
            BinaryExpression {
              op: '<',
-             left: IdentifierExpression { id: 'x' },
+             left: IdentifierExpression { referent: 'x' },
              right: NumericLiteral { value: 5 } },
           body:
            Block {
@@ -18,6 +18,6 @@ Program {
               [ CallStatement {
                   call:
                    Call {
-                     callee: IdentifierExpression { id: 'doStuff' },
+                     callee: IdentifierExpression { referent: 'doStuff' },
                      args:
-                      [ Argument { id: null, expression: IdentifierExpression { id: 'x' } } ] } } ] } } ] } }
+                      [ Argument { id: null, expression: IdentifierExpression { referent: 'x' } } ] } } ] } } ] } }

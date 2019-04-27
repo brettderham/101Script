@@ -3,14 +3,14 @@ Program {
    Block {
      statements:
       [ IfStatement {
-          cases:
+          test:
            BinaryExpression {
              op: '==',
-             left: IdentifierExpression { id: 'x' },
-             right: IdentifierExpression { id: 'y' } },
+             left: IdentifierExpression { referent: 'x' },
+             right: IdentifierExpression { referent: 'y' } },
           alternate:
            Block {
              statements:
               [ AssignmentStatement {
-                  target: IdentifierExpression { id: 'z' },
-                  sources: IdentifierExpression { id: 'x' } } ] } } ] } }
+                  target: IdentifierExpression { referent: 'z' },
+                  source: IdentifierExpression { referent: 'x' } } ] } } ] } }

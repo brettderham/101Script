@@ -3,9 +3,9 @@ Program {
    Block {
      statements:
       [ AssignmentStatement {
-          target: IdentifierExpression { id: 'x' },
-          sources:
+          target: IdentifierExpression { referent: 'x' },
+          source:
            Call {
-             callee: IdentifierExpression { id: 'halfTheString' },
+             callee: IdentifierExpression { referent: 'halfTheString' },
              args:
               [ Argument { id: null, expression: StringLiteral { value: '"Poop"' } } ] } } ] } }

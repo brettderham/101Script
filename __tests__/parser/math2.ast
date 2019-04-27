@@ -3,8 +3,8 @@ Program {
    Block {
      statements:
       [ AssignmentStatement {
-          target: IdentifierExpression { id: 'y' },
-          sources:
+          target: IdentifierExpression { referent: 'y' },
+          source:
            BinaryExpression {
              op: '/',
              left:
