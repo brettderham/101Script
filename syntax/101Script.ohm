@@ -31,6 +31,7 @@ IOIScript {
               |  "[" ListOf<Exp, ","> "]"               -- list           
               |  Call
               |  VarExp
+              |  ObjectField
               |  "(" Exp ")"                             -- parens
               |  NewObject
   Call        =  VarExp "(" Args ")"
@@ -43,6 +44,7 @@ IOIScript {
   Param       =  id ("=" Exp)?
   Params      =  ListOf<Param, ",">
   Field       =  id ":" Exp
+  ObjectField =  id "." id
   Method      =  id "(" Params ")" ":" Block ";"
   Arg         =  ((id ":")? Exp)
   Args        =  ListOf<Arg, ";">

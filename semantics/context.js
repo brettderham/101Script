@@ -59,6 +59,7 @@ class Context {
     if (id in this.declarations) {
       return this.declarations[id];
     } else if (this.parent === null) { // eslint-disable-line
+  //} else if (this.kind === (null)) { 
       throw new Error(`Identifier ${id} has not been declared`);
     }
     return this.parent.lookup(id);

@@ -4,12 +4,14 @@ module.exports = class AssignmentStatement {
   }
 
   analyze(context) {
-      this.sources.analyze(context);
-      this.target.lookup(context.id);
+    console.log("This.sources = " + this.sources);
+    console.log("This.target = " + this.target);
+    this.sources.analyze(context);
+    this.target.lookup(context.id);
 
-      if (this.target == id) {
-        this.referent = this.referent.analyze();
-      }
+    if (this.target == id) {
+      this.referent = this.referent.analyze();
+    }
     
     // this.sources.analyze(context);
     // this.statements.target.analyze(context); // add(context.id);

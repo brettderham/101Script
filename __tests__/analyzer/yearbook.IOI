@@ -1,0 +1,18 @@
+object yearBook:
+   good: true
+   pages: 200;
+   
+if(yearBook.good):
+   print("This book is awesome")
+else:
+   print("This book suxxx")
+;
+
+let currentPage = 0
+const goal = 20
+loop(yearBook.pages):
+    if(x equals goal):
+       break
+    else:
+       1 addedTo currentPage;
+;
