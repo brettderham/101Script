@@ -4,7 +4,6 @@ module.exports = class IdentifierExpression {
   }
 
   analyze(context) {
-    console.log(`Looking up ${this.referent} for context ${context}`);
     this.referent = context.lookup(this.referent);
   }
 };

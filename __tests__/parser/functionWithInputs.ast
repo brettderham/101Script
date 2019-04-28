@@ -5,7 +5,7 @@ Program {
       [ FunctionDeclaration {
           id: 'hello',
           function:
-           FunctionObject {
+           NewObject {
              id: 'hello',
              params:
               [ Parameter { id: 'name', defaultExpression: null },

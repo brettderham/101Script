@@ -5,7 +5,7 @@ Program {
       [ FunctionDeclaration {
           id: 'theKnightsWhoSay',
           function:
-           FunctionObject {
+           NewObject {
              id: 'theKnightsWhoSay',
              params: [],
              body:

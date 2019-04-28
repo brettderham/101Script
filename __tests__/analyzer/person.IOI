@@ -1,3 +1,7 @@
-class Person:
-   name: "Peter"
-;
+-- class Person:
+--  name: "Peter"
+-- ;
+
+object Person:
+  name: "Peter"
+;   

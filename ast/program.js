@@ -6,7 +6,6 @@ module.exports = class Program {
   }
 
   analyze() {
-    console.log(`Looking up ${this.body}`)
     const context = new Context({ parent: Context.INITIAL });
     this.body.analyze(context);
   }

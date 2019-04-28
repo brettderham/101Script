@@ -15,7 +15,7 @@ const LoopStatement = require('../ast/loop-statement');
 const WhileStatement = require('../ast/while-statement');
 const CallStatement = require('../ast/call-statement');
 const FunctionDeclaration = require('../ast/function-declaration');
-const FunctionObject = require('../ast/function-object');
+const NewObject = require('../ast/new-object');
 const ListExpression = require('../ast/list-expression');
 const BinaryExpression = require('../ast/binary-expression');
 const UnaryExpression = require('../ast/unary-expression');
@@ -133,8 +133,8 @@ const astGenerator = grammar.createSemantics().addOperation('ast', {
     return new ClassDeclaration(id.sourceString, arrayToNullable(alternate.ast()), body.ast());
   },
 
-  NewObject_object(_1, id, _2, args, _3) {
-    return new FunctionObject(id.ast(), args.ast());
+  NewObject_object(_1, id, _2, params, _3) {
+    return new NewObject(id.ast(), params.ast());
   },
 
   VarExp_subscripted(v, _1, e, _2) {

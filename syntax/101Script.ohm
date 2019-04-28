@@ -5,7 +5,7 @@ IOIScript {
               |  "loopWhile" "(" Exp ")" ":" Block ";"   -- while
               |  "loop" "(" Exp ")" ":" Block ";"        -- loop
               |  "if" "(" Exp ")" ":" Block
-                 "else" ":" Block ";"                      -- if
+                 "else" ":" Block ";"                         -- if
               |  "function" id "(" Params ")" ":" Block ";"   -- function
   SimpleStmt  =  ("let" | "const") id ("=" | "gets") Exp      -- vardecl
               |  VarExp ("=" | "gets") Exp                    -- assign
@@ -27,7 +27,7 @@ IOIScript {
   Exp5        =  boollit
               |  numlit
               |  strlit
-              |  "[" ListOf<Exp, ","> "]"               -- list
+              |  "[" ListOf<Exp, ","> "]"                -- list
               |  Call
               |  VarExp
               |  "(" Exp ")"                             -- parens
@@ -35,7 +35,7 @@ IOIScript {
   Call        =  VarExp "(" Args ")"
 
   ClassDecl   =  "class" id ("extends" id)? ":" (Field | Method | newline)+ ";"   -- class
-  NewObject   =  "object" id ":" (Field | Method | newline)+ ";"                -- object
+  NewObject   =  "object" id ":" (Field | Method | newline)+ ";"                  -- object
   VarExp      =  VarExp "[" Exp "]"                      -- subscripted
               |  VarExp "." id                           -- field
               |  id                                      -- simple

@@ -2,7 +2,7 @@ Program {
   body:
    Block {
      statements:
-      [ FunctionObject {
+      [ NewObject {
           id: 'shape',
           params:
            [ [ '\n' ],

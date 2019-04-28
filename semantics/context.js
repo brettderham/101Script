@@ -10,7 +10,7 @@
 
 const util = require('util')
 const FunctionDeclaration = require('../ast/function-declaration');
-const FunctionObject = require('../ast/function-object');
+const NewObject = require('../ast/new-object');
 const Parameter = require('../ast/parameter');
 
 class Context {
@@ -73,7 +73,7 @@ class Context {
   }
 
   assertIsFunction(entity) { // eslint-disable-line class-methods-use-this
-    if (entity.constructor !== FunctionObject) {
+    if (entity.constructor !== NewObject) {
       throw new Error(`${entity.id} is not a function`);
     }
   }

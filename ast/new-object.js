@@ -1,4 +1,4 @@
-module.exports = class FunctionObject {
+module.exports = class NewObject {
   constructor(id, params, body) {
     Object.assign(this, { id, params, body });
   }

@@ -5,7 +5,7 @@ Program {
       [ FunctionDeclaration {
           id: 'averageOf3',
           function:
-           FunctionObject {
+           NewObject {
              id: 'averageOf3',
              params:
               [ Parameter { id: 'x', defaultExpression: null },
