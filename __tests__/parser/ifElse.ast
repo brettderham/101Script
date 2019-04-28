@@ -6,7 +6,7 @@ Program {
           target: IdentifierExpression { referent: 'x' },
           source: NumericLiteral { value: 2 } },
         IfStatement {
-          cases:
+          test:
            BinaryExpression {
              op: 'equals',
              left: IdentifierExpression { referent: 'y' },

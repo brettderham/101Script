@@ -5,10 +5,11 @@ module.exports = class IfStatement {
 
 
   analyze(context) {
-    console.log("this.cases = " + this.cases);
-    this.cases.forEach(c => c.analyze(context.createChildContextForBlock()));
-    if (this.alternate) {
-      this.alternate.forEach(s => s.analyze(context.createChildContextForBlock()));
-    }
+    this.test.analyze(context);
+    const testContext = context.createChildContextForLoop();
+    this.test.analyze(testContext);    
+    
+    
+  
   }
 };

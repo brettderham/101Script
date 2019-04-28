@@ -1,6 +1,7 @@
 object yearBook:
    good: true
-   pages: 200;
+   pages: 200
+;
    
 if(yearBook.good):
    print("This book is awesome")
