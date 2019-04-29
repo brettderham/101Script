@@ -1,7 +1,3 @@
--- class Person:
---  name: "Peter"
--- ;
-
 object Person:
-  name: "Peter"
+   name: "Peter"
 ;
