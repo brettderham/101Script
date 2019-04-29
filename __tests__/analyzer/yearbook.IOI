@@ -1,19 +1,16 @@
 object yearBook:
-   good: true
-   pages: 200
+  good: true
+  pages: 200
 ;
-   
+
 if(yearBook.good):
-   print("This book is awesome")
+  print("This book is awesome")
 else:
-   print("This book suxxx")
+  print("This book suxxx")
 ;
 
 let currentPage = 0
-let goal = 20
-loopWhile(yearBook.good):
-    if(currentpage equals goal):
-       break
-    else:
-       currentPage = currentPage + 1;
+loopWhile(currentPage < 5):
+  currentPage = currentPage + 1
 ;
+print(currentPage)

@@ -48,7 +48,6 @@ class Context {
   // allowed. Note that if we allowed overloading, this method would have to
   // be a bit more sophisticated.
   add(entity) {
-    console.log(this);
     if (entity.id in this.declarations && entity.id !== undefined) {
       throw new Error(`Identitier ${entity.id} already declared in this scope`);
     }

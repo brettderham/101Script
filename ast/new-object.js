@@ -3,6 +3,7 @@ const Parameter = require("./parameter");
 module.exports = class NewObject {
   constructor(id, params, body) {
     Object.assign(this, { id, params, body });
+    // this.params = params.filter(s => !Array.isArray(s));
   }
 
   analyze(context) {

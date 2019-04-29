@@ -9,7 +9,6 @@ module.exports = class FunctionDeclaration {
   analyze(context) {
     // First put the function in the current context, then analyze it in
     // a new child context.
-    console.log("###########################");
     context.add(this.function);
     this.function.analyze(context.createChildContextForFunctionBody(this));
   }
