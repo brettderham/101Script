@@ -4,4 +4,4 @@
 
 object Person:
   name: "Peter"
-;   
+;
