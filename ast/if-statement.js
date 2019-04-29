@@ -5,7 +5,7 @@ module.exports = class IfStatement {
 
 
   analyze(context) {
-    this.test = context.lookup(this.test);
+    // this.test = context.lookup(this.test);
     this.test.analyze(context);
     const testContext = context.createChildContextForLoop();
     this.test.analyze(testContext);    
