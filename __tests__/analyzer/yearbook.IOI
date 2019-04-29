@@ -10,10 +10,10 @@ else:
 ;
 
 let currentPage = 0
-const goal = 20
-loop(yearBook.pages):
-    if(x equals goal):
+let goal = 20
+loopWhile(yearBook.good):
+    if(currentpage equals goal):
        break
     else:
-       1 addedTo currentPage;
+       currentPage = currentPage + 1;
 ;
