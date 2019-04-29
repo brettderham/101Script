@@ -1,1 +1,90 @@
-<h1> Hello World </h1>
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="main.css">
+<html>
+
+<body>
+    <div class = "centerParagraph">
+            <img src="https://raw.githubusercontent.com/brettderham/101Script/master/resources/101script-logo.jpg">
+    </div>
+    <div class = "center">
+            <div class="css-typing1">
+                      Coding Made Simple
+            </div>
+    </div>
+    <div class = "center2">
+            <div class="css-typing2">
+                      101Script
+            </div>
+    </div>
+    <h1>Story</h1>
+    <div class = "centerParagraph">
+    <p>101Script is a simple, easy-to-read programming language intended to be used by 
+        those new to programming. There are multiple ways to write certain operations 
+        to ease beginners into this language and others similar to it. Thanks to 
+        101Script's omission of extra symbols in its syntax, along with the fact that 
+        it is weakly and dynamically typed, users will be able to run code without the 
+        need to pore over tedious details of the code.<br>
+        101Script is designed for users with little to no programming experience.
+        We believe that programming is essential and should be accessible to everyone.
+        We took inspiration from Javascript and similar programming languages to give 
+        users the option to code using traditional programming or keywords.<br>
+        101Script equates : "gets" as "=", "addedTo" as "+=", "equals" as "=" and many 
+        more cool quirks.
+
+    </p>
+    </div>
+    <h1>Snippets</h1>
+    <div class="center">
+    <pre class = "code">
+    function USChangeMaker(cents):
+        if(cents greaterThan 99):
+            cents gets 99
+        else:
+            break
+        ;
+        quarters gets 0
+        dimes gets 0
+        nickels 0
+        pennies 0
+        loopWhile(cents greaterOrEq 25):
+            1 addedTo quarters
+            25 subtractedFrom cents
+        ;
+        loopWhile(cents greaterOrEq 10):
+            1 addedTo dimes
+            10 subtractedFrom cents
+        ;
+        loopWhile(cents greaterOrEq 5):
+            1 addedTo nickels
+            5 subtractedFrom cents
+        ;
+        loopWhile(cents greaterOrEq 1):
+            1 addedTo pennies
+            1 subtractedFrom cents
+        ;
+    return quarters + " " + dimes + " " + nickels + " " + pennies
+    ;
+    </pre>
+    <pre class="code">
+    function piEstimate(precision):
+        inside = 0  // or inside gets 0
+        loop(precision):
+            x = random(0,1)     //or x gets random(0,1)
+            y = random(0,1)     //or y gets random(0,1)
+            if((x^2+y^2)^0.5 lessThan 1):   //or < 1
+                1 addedTo inside;
+        ;
+        piEstimate = 4*inside/precision
+    return piEstimate;
+    </pre>
+    <pre class="code">
+    def Fibonacci(n):
+        if(n lessOrEqual 1):
+            return n
+        else:
+            return(Fibonacci(1 subtractedFrom n) + 
+                   Fibonacci(2 subtractedFrom n))
+            </pre>
+    </div>
+</body>
+</html>

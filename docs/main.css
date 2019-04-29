@@ -1,0 +1,183 @@
+/* Typing animation credit to Joeri Boudewijns:
+https://codepen.io/Bojoer/pen/EZYgeO */
+
+.code{
+  font-size: 20px;
+  background-color: hsla(0, 0%, 15%, 0.15);
+  width: 800px;
+  border: 5px solid #4d0081;
+  padding: 50px;
+  margin: 10px;
+}
+
+body{
+  /* Set a font size */
+  font-size: 26px;
+  font-family: "Arial";
+  
+  /* Begin The Redundancies */
+  background-image: 
+    -webkit-linear-gradient(0deg, transparent 5em, rgba(255,0,0,.2) 0, transparent 5.1em),
+    -webkit-linear-gradient(rgba(0,0,255,.3) 1px, transparent 0);
+  background-image: 
+    -moz-linear-gradient(0deg, transparent 5em, rgba(255,0,0,.2) 0, transparent 5.1em),
+    -moz-linear-gradient(rgba(0,0,255,.3) 1px, transparent 0);
+  background-image: 
+    -o-linear-gradient(0deg, transparent 5em, rgba(255,0,0,.2) 0, transparent 5.1em), 
+    -o-linear-gradient(rgba(0,0,255,.3) 1px, transparent 0);
+  background-image: 
+    -ms-linear-gradient(0deg, transparent 5em, rgba(255,0,0,.2) 0, transparent 5.1em), 
+    -ms-linear-gradient(rgba(0,0,255,.3) 1px, transparent 0);
+  -webkit-background-size: 100% 2em;
+  -moz-background-size: 100% 2em;
+
+  /* In a perfect world... */
+  background-image: 
+    linear-gradient(0deg, transparent 5em, rgba(255,0,0,.2) 0, transparent 5.1em), 
+    linear-gradient(rgba(0,0,255,.3) 1px, transparent 0);
+  background-size: 100% 2em;
+}
+
+.center {
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+}
+
+.center2{
+  margin: auto;
+  width: 40%;
+  padding: 10px;
+}
+
+.centerParagraph{
+  text-align: center;
+  margin: auto;
+  width: 80%;
+  padding: 10px;
+}
+
+
+
+.css-typing1 {
+  border-right: .15em solid #4d0081;
+  font-family: "Arial";
+  font-size: 80px;
+  white-space: nowrap;
+  overflow: hidden;
+  color: black;
+  width: 11em;
+  -webkit-animation: type 2s steps(40, end), blink .5s step-end infinite alternate;
+  animation: type 2.5s steps(40, end), blink .5s step-end infinite alternate;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.css-typing2 {
+  border-right: .15em solid #4d0081;
+  font-family: "Arial";
+  font-size: 80px;
+  white-space: nowrap;
+  overflow: hidden;
+  color: black;
+  width: 4.3em;
+  opacity: 0;
+  -webkit-animation: type3 2s steps(40, end), blink .5s step-end infinite alternate;
+  animation: type3 3.5s steps(40, end), blink .5s step-end infinite alternate;
+  -webkit-animation-delay: 2s;
+  animation-delay: 3.5s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes type {
+  0% {
+    width: 0;
+  }
+  99.9% {
+    border-right: .15em solid #4d008181;
+  }
+  100% {
+    border: none;
+  }
+}
+
+@-webkit-keyframes type {
+  0% {
+    width: 0;
+  }
+  99.9% {
+    border-right: .15em solid #4d0081;
+  }
+  100% {
+    border: none;
+  }
+}
+
+@keyframes type2 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  99.9% {
+    border-right: .15em solid #4d008181;
+  }
+  100% {
+    opacity: 1;
+    border: none;
+  }
+}
+
+@-webkit-keyframes type2 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  99.9% {
+    border-right: .15em solid #4d008181;
+  }
+  100% {
+    opacity: 1;
+    border: none;
+  }
+}
+
+@keyframes type3 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes type3 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+@-webkit-keyframes blink {
+  50% {
+    border-color: tranparent;
+  }
+}
