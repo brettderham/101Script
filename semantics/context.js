@@ -79,8 +79,16 @@ class Context {
   }
 }
 
-Context.INITIAL = new Context();
-new FunctionDeclaration('print', [new Parameter('_', null)], null).analyze(Context.INITIAL);
-new FunctionDeclaration('sqrt', [new Parameter('_', null)], null).analyze(Context.INITIAL);
+const FunctionObject = require("../ast/new-object");
 
+const {
+  StandardFunctions
+} = require("./builtins");
+
+Context.INITIAL = new Context();
+// new FunctionDeclaration('print', [new Parameter('_', null)], null).analyze(Context.INITIAL);
+// new FunctionDeclaration('sqrt', [new Parameter('_', null)], null).analyze(Context.INITIAL);
+StandardFunctions.forEach((f) => {
+  Context.INITIAL.declarations[f.id] = f;
+});
 module.exports = Context;
