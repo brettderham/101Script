@@ -1,0 +1,4 @@
+let y = "string"
+let x = 5
+function multiply():
+    x * y

@@ -1,0 +1,3 @@
+function multiply(x):
+    x * y
+;
