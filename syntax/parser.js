@@ -11,7 +11,6 @@ const BreakStatement = require('../ast/break-statement');
 const FieldExpression = require('../ast/field-expression');
 const ReturnStatement = require('../ast/return-statement');
 const IfStatement = require('../ast/if-statement');
-const LoopStatement = require('../ast/loop-statement');
 const WhileStatement = require('../ast/while-statement');
 const CallStatement = require('../ast/call-statement');
 const FunctionDeclaration = require('../ast/function-declaration');
@@ -59,10 +58,6 @@ const astGenerator = grammar.createSemantics().addOperation('ast', {
 
   Stmt_while(_1, _2, test, _3, _4, body, _5) {
     return new WhileStatement(test.ast(), body.ast());
-  },
-
-  Stmt_loop(_1, _2, test, _3, _4, body, _5) {
-    return new LoopStatement(test.ast(), body.ast());
   },
 
   Stmt_if(_if, _lp, test, _rp, _col1, consequent, _else, _col2, alternate, _s3) {

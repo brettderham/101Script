@@ -68,7 +68,7 @@
     <pre class="code">
     function piEstimate(precision):
         inside = 0  // or inside gets 0
-        loop(precision):
+        loopWhile(precision notEqual inside):
             x = random(0,1)     //or x gets random(0,1)
             y = random(0,1)     //or y gets random(0,1)
             if((x^2+y^2)^0.5 lessThan 1):   //or < 1
