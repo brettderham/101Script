@@ -40,8 +40,6 @@ y = 5 + 3 - 2                   y = 5 + 3 - 2
 ```
 if(x > 5):                      if(x > 5) {
 	print(x)		    console.log(x)
-else if(x < 3):                 } else if(x < 3) {
-	print(y)		    console.log(y)
 else:                           } else {
 	print(z)		    console.log(z);
 ;                               }
@@ -84,9 +82,9 @@ object Shape:                   let shape = {
 
 ```
 function piEstimate(precision):
-    inside = 0  // or inside gets 0
-    loopWhile(precision notEqual inside):
-        let x = random(0,1)     //or x gets random(0,1)
+    let inside = 0  // or inside gets 0
+    loop(precision):
+       let x = random(0,1)     //or x gets random(0,1)
         let y = random(0,1)     //or y gets random(0,1)
         if((x^2+y^2)^0.5 lessThan 1):   //or < 1
             1 addedTo inside;
@@ -215,4 +213,30 @@ function USChangeMaker(cents):
 
     return quarters + " " + dimes + " " + nickels + " " + pennies
 ;
+```
+
+### Static Semantic Errors
+Examples of some static semantic errors in 101Script
+```
+
+let print = "print"
+-- This will create a static semantic error because print is a keyword.
+
+let combo = com + bo
+-- Static semantic error because 101Script does not allow concatenation of strings.
+
+function multiply(x):
+    x * y
+;
+-- 101Script will report a static semantic error because y has not been declared yet.
+
+let y = "string"
+let x = 5
+function multiply():
+    x * y
+;
+-- 101Script will report an error because you cannot multiply a string and an int.
+
+let function print() = function type()
+-- Cannot assign two functions to each other without a static semantic error.
 ```
