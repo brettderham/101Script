@@ -73,23 +73,14 @@ class Context {
   }
 
   assertIsFunction(entity) { // eslint-disable-line class-methods-use-this
-    if (entity.constructor !== NewObject) {
-      console.log(entity);
+    if (entity.constructor !== [NewObject]) {
+      // console.log(entity);
       throw new Error(`${entity.referent} is not a function`);
     }
   }
 }
 
-const FunctionObject = require("../ast/new-object");
-
-const {
-  StandardFunctions
-} = require("./builtins");
-
 Context.INITIAL = new Context();
-// new FunctionDeclaration('print', [new Parameter('_', null)], null).analyze(Context.INITIAL);
+new FunctionDeclaration('print', [new Parameter('_', null)], null).analyze(Context.INITIAL);
 // new FunctionDeclaration('sqrt', [new Parameter('_', null)], null).analyze(Context.INITIAL);
-StandardFunctions.forEach((f) => {
-  Context.INITIAL.declarations[f.id] = f;
-});
 module.exports = Context;
