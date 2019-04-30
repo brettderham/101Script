@@ -74,7 +74,8 @@ class Context {
 
   assertIsFunction(entity) { // eslint-disable-line class-methods-use-this
     if (entity.constructor !== NewObject) {
-      throw new Error(`${entity.id} is not a function`);
+      console.log(entity);
+      throw new Error(`${entity.referent} is not a function`);
     }
   }
 }

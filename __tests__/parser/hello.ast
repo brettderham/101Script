@@ -1,0 +1,10 @@
+Program {
+  body:
+   Block {
+     statements:
+      [ CallStatement {
+          call:
+           Call {
+             callee: IdentifierExpression { referent: 'print' },
+             args:
+              [ Argument { id: null, expression: StringLiteral { value: '"Hello"' } } ] } } ] } }

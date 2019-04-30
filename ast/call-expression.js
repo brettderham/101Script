@@ -4,7 +4,6 @@ module.exports = class Call {
   }
 
   analyze(context) {
-    this.callee = context.lookup(this.callee);
     context.assertIsFunction(this.callee);
     this.checkArgumentMatching(this.callee);
     this.args.forEach(arg => arg.analyze(context));

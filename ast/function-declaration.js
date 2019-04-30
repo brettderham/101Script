@@ -6,6 +6,7 @@ module.exports = class FunctionDeclaration {
     this.function = new NewObject(id, params, body);
   }
 
+
   analyze(context) {
     // First put the function in the current context, then analyze it in
     // a new child context.
