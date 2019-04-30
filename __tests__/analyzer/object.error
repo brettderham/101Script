@@ -1,0 +1,4 @@
+object Person:
+   name: "Peter"
+   name: "5"
+;

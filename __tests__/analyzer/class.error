@@ -1,0 +1,4 @@
+class Tester:
+  x: 5
+  x: "dog"
+;

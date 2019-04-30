@@ -1,1 +1,1 @@
-let function print() = function type()
+let hello = circle()
