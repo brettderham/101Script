@@ -1,6 +1,6 @@
 if(1 equals 1 or 2 equals 2):
-   let x = 2
+   let x = -2
 else:
-   let x = 3
+   let x = -3
 ;
 
