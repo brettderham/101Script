@@ -75,11 +75,11 @@ class Context {
 
   assertIsFunction(entity) { // eslint-disable-line class-methods-use-this
     // console.log("CONTEXT" + context);
-    console.log(`${entity} ` + entity);
-    console.log("NewObject " + NewObject);
-    if (entity !== NewObject) {
+    // console.log(`${entity} ` + entity);
+    // console.log("NewObject " + NewObject);
+    if (entity.constructor !== NewObject) {
       // console.log(entity);
-      throw new Error(`${entity.referent} is not a function`);
+      throw new Error(`${entity.constructor} is not a function`);
     }
   }
 }

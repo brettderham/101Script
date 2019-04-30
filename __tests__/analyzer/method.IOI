@@ -1,0 +1,6 @@
+class school:
+   person(name, age): 
+      name = "Toal"
+      age = 21
+    ;
+;
