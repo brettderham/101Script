@@ -62,8 +62,9 @@ class Context {
     } else if (this.parent === null) { // eslint-disable-line
   //} else if (this.kind === (null)) {
       throw new Error(`Identifier ${util.format(id)} has not been declared`);
-    }
+    } else{
     return this.parent.lookup(id);
+    }
   }
 
   assertInFunction(message) { // eslint-disable-line class-methods-use-this
@@ -73,7 +74,10 @@ class Context {
   }
 
   assertIsFunction(entity) { // eslint-disable-line class-methods-use-this
-    if (entity.constructor !== [NewObject]) {
+    // console.log("CONTEXT" + context);
+    console.log(`${entity} ` + entity);
+    console.log("NewObject " + NewObject);
+    if (entity !== NewObject) {
       // console.log(entity);
       throw new Error(`${entity.referent} is not a function`);
     }
