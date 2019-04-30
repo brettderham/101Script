@@ -1,9 +1,0 @@
- Program {
-  body:
-   Block {
-     statements:
-      [ VariableDeclaration {
-          kind: 'let',
-          id: 'x',
-          initializer: NumericLiteral { value: 0 } },
-        LoopStatement { statements: NumericLiteral { value: 5 } } ] } }

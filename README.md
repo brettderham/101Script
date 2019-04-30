@@ -47,15 +47,6 @@ else:                           } else {
 ;                               }
 ```
 
-### Basic Loop Statements
-```
-let x = 0                   let x = 0
-loop(5):                    while(x < 5) {
-    x += 1                      x++
-    print(x)                    console.log(x)
-;                           }
-```
-
 ### While Statements
 ```
 let y = 0                   let y = 0
@@ -93,9 +84,9 @@ object Shape:                   let shape = {
 
 ```
 function piEstimate(precision):
-    let inside = 0  // or inside gets 0
-    loop(precision):
-       let x = random(0,1)     //or x gets random(0,1)
+    inside = 0  // or inside gets 0
+    loopWhile(precision notEqual inside):
+        let x = random(0,1)     //or x gets random(0,1)
         let y = random(0,1)     //or y gets random(0,1)
         if((x^2+y^2)^0.5 lessThan 1):   //or < 1
             1 addedTo inside;

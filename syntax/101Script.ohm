@@ -3,7 +3,6 @@ IOIScript {
   Block       =  (Stmt | SimpleStmt | Exp | newline )+
   Stmt        =  SimpleStmt newline                      -- simple
               |  "loopWhile" "(" Exp ")" ":" Block ";"   -- while
-              |  "loop" "(" Exp ")" ":" Block ";"        -- loop
               |  "if" "(" Exp ")" ":" Block
                  "else" ":" Block ";"                         -- if
               |  "function" id "(" Params ")" ":" Block ";"   -- function
