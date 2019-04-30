@@ -54,7 +54,7 @@ function compileFile(filename, options) {
       console.error(error);
       return;
     }
-    console.log(compile(sourceCode, options));
+    // console.log(compile(sourceCode, options));
   });
 }
 

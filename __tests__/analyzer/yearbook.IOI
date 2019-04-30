@@ -4,13 +4,12 @@ object yearBook:
 ;
 
 if(yearBook.good):
-  print("This book is awesome")
+  let reaction = "This book is awesome"
 else:
-  print("This book suxxx")
+  let reaction = "This book suxxx"
 ;
 
 let currentPage = 0
 loopWhile(currentPage < 5):
   currentPage = currentPage + 1
 ;
-print(currentPage)

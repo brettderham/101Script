@@ -19,7 +19,6 @@ const ListExpression = require('../ast/list-expression');
 const BinaryExpression = require('../ast/binary-expression');
 const UnaryExpression = require('../ast/unary-expression');
 const IdentifierExpression = require('../ast/identifier-expression');
-const SubscriptedExpression = require('../ast/subscripted-expression');
 const Call = require('../ast/call-expression');
 const Parameter = require('../ast/parameter');
 const Field = require('../ast/field');
@@ -130,10 +129,6 @@ const astGenerator = grammar.createSemantics().addOperation('ast', {
 
   NewObject_object(_1, id, _2, params, _3) {
     return new NewObject(id.ast(), params.ast());
-  },
-
-  VarExp_subscripted(v, _1, e, _2) {
-    return new SubscriptedExpression(v.ast(), e.ast());
   },
 
   VarExp_field(v, _1, e,) {
