@@ -3,6 +3,7 @@ const NewObject = require('./new-object');
 module.exports = class FunctionDeclaration {
   constructor(id, params, body) {
     this.id = id;
+    Object.assign(this, {id});
     this.function = new NewObject(id, params, body);
   }
 

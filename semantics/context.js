@@ -78,7 +78,7 @@ class Context {
     // console.log(`${entity} ` + entity);
     // console.log("NewObject " + NewObject);
     if (entity.constructor !== NewObject) {
-      // console.log(entity);
+      console.log("ENTITY : " + entity);
       throw new Error(`${entity.constructor} is not a function`);
     }
   }

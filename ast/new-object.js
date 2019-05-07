@@ -6,6 +6,10 @@ module.exports = class NewObject {
     // this.params = params.filter(s => !Array.isArray(s));
   }
 
+  get isExternal() {
+    return !this.function.body;
+  }
+
   analyze(context) {
     this.params = this.params.map(p => new Parameter(p.id, p.defaultExpression));
     this.params.map(p => p.analyze(context));

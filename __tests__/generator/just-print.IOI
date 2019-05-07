@@ -1,1 +1,3 @@
-print(101)
+function addwrong():
+    let bad = "dog" + 3
+;

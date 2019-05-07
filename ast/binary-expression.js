@@ -4,6 +4,7 @@ module.exports = class BinaryExpression {
   }
 
   analyze(context) {
+    console.log(this.left);
     this.left.analyze(context);
     this.right.analyze(context);
   }

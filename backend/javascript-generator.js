@@ -66,14 +66,28 @@ Object.assign(Argument.prototype, {
 
 Object.assign(AssignmentStatement.prototype, {
   gen() {
-    const targets = this.targets.map(t => t.gen());
-    const sources = this.sources.map(s => s.gen());
-    return `${bracketIfNecessary(targets)} = ${bracketIfNecessary(sources)}`;
+    const targets = this.target.map(t => t.gen());
+    const sources = this.source.map(s => s.gen());
+    let firstVar= sources.values().next().value;
+    if (sources.length < 2) {
+      return `${bracketIfNecessary(targets)} = ${bracketIfNecessary(sources)}`;
+    } else if(sources.forEach(s => s.entries().next().value === firstVar.constructor)) {
+      return `${bracketIfNecessary(targets)} = ${bracketIfNecessary(sources)}`; 
+    } else {
+      console.log("Error!"); 
+    }
   },
 });
 
 Object.assign(BinaryExpression.prototype, {
-  gen() { return `(${this.left.gen()} ${makeOp(this.op)} ${this.right.gen()})`; },
+  gen() {
+    console.log(this.left.constructor);
+    if(this.left.constructor === this.right.constructor) {
+      return `(${this.left.gen()} ${makeOp(this.op)} ${this.right.gen()})`;
+    } else {
+      return "Error!"; 
+    }
+  },
 });
 
 // Object.assign(Block.prototype, {
@@ -115,7 +129,7 @@ Object.assign(FunctionObject.prototype, {
   },
 });
 
-Object.assign(field.prototype, {
+Object.assign(Field.prototype, {
   gen() { return this.expression.gen(); },
 });
 
@@ -125,12 +139,16 @@ Object.assign(IdentifierExpression.prototype, {
 
 Object.assign(IfStatement.prototype, {
   gen() {
-    const cases = this.tests.map((test, index) => {
+    if (cases.constructor === BooleanLiteral){
+      const cases = this.tests.map((test, index) => {
       const prefix = index === 0 ? 'if' : '} else if';
       return `${prefix} (${test.gen()}) {${generateBlock(this.consequents[index])}`;
     });
-    const alternate = this.alternate ? `}else{${generateBlock(this.alternate)}` : '';
-    return `${cases.join('')}${alternate}}`;
+      const alternate = this.alternate ? `}else{${generateBlock(this.alternate)}` : '';
+      return `${cases.join('')}${alternate}}`;
+    } else {
+      console.log("Error!");
+    }
   },
 });
 
@@ -181,7 +199,13 @@ Object.assign(StringLiteral.prototype, {
 });
 
 Object.assign(UnaryExpression.prototype, {
-  gen() { return `(${makeOp(this.op)} ${this.operand.gen()})`; },
+  gen() { 
+    if(this.operand.constructor === NumericLiteral) {
+      return `(${makeOp(this.op)} ${this.operand.gen()})`; 
+    } else {
+      console.log("Error!");
+    }
+  },
 });
 
 Object.assign(VariableDeclaration.prototype, {
@@ -200,7 +224,11 @@ Object.assign(Variable.prototype, {
 
 Object.assign(WhileStatement.prototype, {
   gen() {
-    return `while (${this.test.gen()}) { ${generateBlock(this.body)} }`;
+    if (cases.constructor === BooleanLiteral) {
+      return `while (${this.test.gen()}) { ${generateBlock(this.body)} }`;
+    } else {
+      console.log("Error!");
+    }
   },
 });
 
