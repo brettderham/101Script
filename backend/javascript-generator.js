@@ -27,18 +27,189 @@ const BooleanLiteral = require('../ast/boolean-literal');
 const NumericLiteral = require('../ast/numeric-literal');
 const StringLiteral = require('../ast/string-literal');
 
-const grammar = ohm.grammar(fs.readFileSync('./syntax/101Script.ohm'));
-
-// Ohm turns `x?` into either [x] or [], which we should clean up for our AST.
-function unpack(a) {
-  return a.length === 0 ? null : a[0];
+function makeOp(op) {
+  return { not: '!', and: 'and', or: 'or', '==': 'equals', '!=': 'notEqual' }[op] || op;
 }
 
-function arrayToNullable(a) {
-  return a.length === 0 ? null : a[0];
+const jsName = (() => {
+  let lastId = 0;
+  const map = new Map();
+  return (v) => {
+    if (!(map.has(v))) {
+      map.set(v, ++lastId); // eslint-disable-line no-plusplus
+    }
+    return `${v.id}_${map.get(v)}`;
+  };
+})();
+
+function bracketIfNecessary(a) {
+  return (a.length === 1) ? `${a}` : `[${a.join(',')}]`;
 }
 
-/* eslint-disable no-unused-vars */
+function generateLibraryFunctions() {
+  function generateLibraryStub(name, params, body) {
+    const entity = Context.INITIAL.declarations[name];
+    return `function ${jsName(entity)}(${params}) {${body}}`;
+  }
+  return [
+    generateLibraryStub('print(_)', 'console.log(_);')
+  ].join('');
+}
+
+function generateBlock(block) {
+  return block.map(s => `${s.gen()};`).join('');
+}
+
+Object.assign(Argument.prototype, {
+  gen() { return this.expression.gen(); },
+});
+
+Object.assign(AssignmentStatement.prototype, {
+  gen() {
+    const targets = this.targets.map(t => t.gen());
+    const sources = this.sources.map(s => s.gen());
+    return `${bracketIfNecessary(targets)} = ${bracketIfNecessary(sources)}`;
+  },
+});
+
+Object.assign(BinaryExpression.prototype, {
+  gen() { return `(${this.left.gen()} ${makeOp(this.op)} ${this.right.gen()})`; },
+});
+
+// Object.assign(Block.prototype, {
+//   gen() {return this.statements.forEach() }
+// });
+
+Object.assign(BooleanLiteral.prototype, {
+  gen() { return `${this.value}`; },
+});
+
+Object.assign(BreakStatement.prototype, {
+  gen() { return 'break'; },
+});
+
+Object.assign(Call.prototype, {
+  gen() {
+    const fun = this.callee.referent;
+    const params = {};
+    const args = Array(this.args.length).fill(undefined);
+    fun.params.forEach((p, i) => { params[p.id] = i; });
+    this.args.forEach((a, i) => { args[a.isPositionalArgument ? i : params[a.id]] = a; });
+    return `${jsName(fun)}(${args.map(a => (a ? a.gen() : 'undefined')).join(',')})`;
+  },
+});
+
+Object.assign(Class.prototype, {
+  gen() {  }
+});
+
+Object.assign(FunctionDeclaration.prototype, {
+  gen() { return this.function.gen(); },
+});
+
+Object.assign(FunctionObject.prototype, {
+  gen() {
+    return `function ${jsName(this)}(${this.params.map(p => p.gen()).join(',')}) {
+      ${generateBlock(this.body)}
+    }`;
+  },
+});
+
+Object.assign(IdentifierExpression.prototype, {
+  gen() { return this.referent.gen(); },
+});
+
+Object.assign(IfStatement.prototype, {
+  gen() {
+    const cases = this.tests.map((test, index) => {
+      const prefix = index === 0 ? 'if' : '} else if';
+      return `${prefix} (${test.gen()}) {${generateBlock(this.consequents[index])}`;
+    });
+    const alternate = this.alternate ? `}else{${generateBlock(this.alternate)}` : '';
+    return `${cases.join('')}${alternate}}`;
+  },
+});
+
+Object.assign(ListExpression.prototype, {
+  gen() {
+    const jsMembers = this.members.map(member => member.gen());
+    return `[${jsMembers.join(',')}]`;
+  },
+});
+
+Object.assign(NumericLiteral.prototype, {
+  gen() { return `${this.value}`; },
+});
+
+Object.assign(Parameter.prototype, {
+  gen() {
+    let translation = jsName(this);
+    if (this.defaultExpression) {
+      translation += ` = ${this.defaultExpression.gen()}`;
+    }
+    return translation;
+  },
+});
+
+Object.assign(Program.prototype, {
+  gen() {
+    const libraryFunctions = generateLibraryFunctions();
+    const programStatements = generateBlock(this.statements);
+    const target = `${libraryFunctions}${programStatements}`;
+    return prettyJs(target, { indent: '  ' });
+  },
+});
+
+Object.assign(ReturnStatement.prototype, {
+  gen() {
+    return `return ${this.returnValue ? this.returnValue.gen() : ''}`;
+  },
+});
+
+Object.assign(StringLiteral.prototype, {
+  gen() { return `${this.value}`; },
+});
+
+Object.assign(SubscriptedExpression.prototype, {
+  gen() {
+    const base = this.variable.gen();
+    const subscript = this.subscript.gen();
+    return `${base}[${subscript}]`;
+  },
+});
+
+Object.assign(UnaryExpression.prototype, {
+  gen() { return `(${makeOp(this.op)} ${this.operand.gen()})`; },
+});
+
+Object.assign(VariableDeclaration.prototype, {
+  gen() {
+    const variables = this.variables.map(v => v.gen());
+    const initializers = this.initializers.map(i => i.gen());
+    return `let ${bracketIfNecessary(variables)} = ${bracketIfNecessary(initializers)}`;
+  },
+});
+
+Object.assign(Variable.prototype, {
+  gen() { return jsName(this); },
+});
+
+Object.assign(WhileStatement.prototype, {
+  gen() {
+    return `while (${this.test.gen()}) { ${generateBlock(this.body)} }`;
+  },
+});
+
+
+
+
+
+
+
+
+
+/*
+/* eslint-disable no-unused-vars 
 const astGenerator = grammar.createSemantics().addOperation('ast', {
   Program(_1, body, _2) {
     const p = new Program(body.ast());
@@ -182,7 +353,7 @@ const astGenerator = grammar.createSemantics().addOperation('ast', {
     return this.sourceString;
   },
 });
-/* eslint-enable no-unused-vars */
+/* eslint-enable no-unused-vars 
 
 module.exports = (text) => {
   const match = grammar.match(text);
@@ -191,3 +362,4 @@ module.exports = (text) => {
   }
   return astGenerator(match).ast();
 };
+*/
