@@ -1,20 +1,10 @@
 /*
-<<<<<<< HEAD
- * Generator Tests
- *
- * Tests that the generated target code, when run, produces the expected output.
-=======
  * Adapted from Dr. Toal @ https://github.com/rtoal/plainscript/blob/master/test/generator/generator-test.js
->>>>>>> 8fba0e717708767339473878f96996c60c0e94a0
  */
 
 const fs = require('fs');
 const { spawn } = require('child_process');
-<<<<<<< HEAD
-const { compile } = require('../../plainscript');
-=======
 const { compile } = require('../../101');
->>>>>>> 8fba0e717708767339473878f96996c60c0e94a0
 
 describe('The code generator', () => {
   fs.readdirSync(__dirname).forEach((name) => {
