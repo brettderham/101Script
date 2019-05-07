@@ -99,9 +99,9 @@ Object.assign(Call.prototype, {
   },
 });
 
-Object.assign(Class.prototype, {
-  gen() {  }
-});
+// Object.assign(Class.prototype, {
+//   gen() {  }
+// });
 
 Object.assign(FunctionDeclaration.prototype, {
   gen() { return this.function.gen(); },
@@ -113,6 +113,10 @@ Object.assign(FunctionObject.prototype, {
       ${generateBlock(this.body)}
     }`;
   },
+});
+
+Object.assign(field.prototype, {
+  gen() { return this.expression.gen(); },
 });
 
 Object.assign(IdentifierExpression.prototype, {
@@ -136,6 +140,12 @@ Object.assign(ListExpression.prototype, {
     return `[${jsMembers.join(',')}]`;
   },
 });
+
+Object.assign(Method.prototype, {
+  gen() { return this.function.gen(); },
+});
+
+// new object
 
 Object.assign(NumericLiteral.prototype, {
   gen() { return `${this.value}`; },
@@ -168,14 +178,6 @@ Object.assign(ReturnStatement.prototype, {
 
 Object.assign(StringLiteral.prototype, {
   gen() { return `${this.value}`; },
-});
-
-Object.assign(SubscriptedExpression.prototype, {
-  gen() {
-    const base = this.variable.gen();
-    const subscript = this.subscript.gen();
-    return `${base}[${subscript}]`;
-  },
 });
 
 Object.assign(UnaryExpression.prototype, {
