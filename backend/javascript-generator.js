@@ -191,7 +191,9 @@ Object.assign(VariableDeclaration.prototype, {
 });
 
 Object.assign(Variable.prototype, {
-  gen() { return jsName(this); },
+  gen() { 
+    return jsName(this); 
+  },
 });
 
 Object.assign(WhileStatement.prototype, {
