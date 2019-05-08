@@ -28,7 +28,7 @@ const util = require('util');
 const yargs = require('yargs');
 const parse = require('./syntax/parser');
 const Context = require('./semantics/context');
-// const generateProgram = require('./backend/javascript-generator');
+const generateProgram = require('./backend/javascript-generator');
 
 // If compiling from a string, return the AST, IR, or compiled code as a string.
 function compile(sourceCode, { astOnly, frontEndOnly, shouldOptimize }) {
@@ -43,8 +43,8 @@ function compile(sourceCode, { astOnly, frontEndOnly, shouldOptimize }) {
   if (frontEndOnly) {
     return util.inspect(program, { depth: null });
   }
-  // return generateProgram(program);
-  return "Coming soon";
+  return generateProgram(program);
+  // return "Coming soon";
 }
 
 // If compiling from a file, write to standard output.
@@ -54,7 +54,7 @@ function compileFile(filename, options) {
       console.error(error);
       return;
     }
-    // console.log(compile(sourceCode, options));
+    console.log(compile(sourceCode, options));
   });
 }
 

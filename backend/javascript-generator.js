@@ -13,6 +13,7 @@ const IfStatement = require('../ast/if-statement');
 const WhileStatement = require('../ast/while-statement');
 const CallStatement = require('../ast/call-statement');
 const FunctionDeclaration = require('../ast/function-declaration');
+const FunctionObject = require('../ast/new-object');
 const NewObject = require('../ast/new-object');
 const ListExpression = require('../ast/list-expression');
 const BinaryExpression = require('../ast/binary-expression');
@@ -23,6 +24,7 @@ const Parameter = require('../ast/parameter');
 const Field = require('../ast/field');
 const Method = require('../ast/method');
 const Argument = require('../ast/argument');
+const Variable = require('../ast/variable');
 const BooleanLiteral = require('../ast/boolean-literal');
 const NumericLiteral = require('../ast/numeric-literal');
 const StringLiteral = require('../ast/string-literal');
@@ -57,7 +59,11 @@ function generateLibraryFunctions() {
 }
 
 function generateBlock(block) {
-  return block.map(s => `${s.gen()};`).join('');
+  return block.statements.map(s => `${s.gen()};`).join('');
+}
+
+module.exports = function (program) {
+  return program.gen();
 }
 
 Object.assign(Argument.prototype, {
@@ -72,9 +78,9 @@ Object.assign(AssignmentStatement.prototype, {
     if (sources.length < 2) {
       return `${bracketIfNecessary(targets)} = ${bracketIfNecessary(sources)}`;
     } else if(sources.forEach(s => s.entries().next().value === firstVar.constructor)) {
-      return `${bracketIfNecessary(targets)} = ${bracketIfNecessary(sources)}`; 
+      return `${bracketIfNecessary(targets)} = ${bracketIfNecessary(sources)}`;
     } else {
-      console.log("Error!"); 
+      console.log("Error!");
     }
   },
 });
@@ -85,14 +91,14 @@ Object.assign(BinaryExpression.prototype, {
     if(this.left.constructor === this.right.constructor) {
       return `(${this.left.gen()} ${makeOp(this.op)} ${this.right.gen()})`;
     } else {
-      return "Error!"; 
+      return "Error!";
     }
   },
 });
 
-// Object.assign(Block.prototype, {
-//   gen() {return this.statements.forEach() }
-// });
+Object.assign(Block.prototype, {
+  gen() {return this.statements.forEach() }
+});
 
 Object.assign(BooleanLiteral.prototype, {
   gen() { return `${this.value}`; },
@@ -181,8 +187,8 @@ Object.assign(Parameter.prototype, {
 
 Object.assign(Program.prototype, {
   gen() {
-    const libraryFunctions = generateLibraryFunctions();
-    const programStatements = generateBlock(this.statements);
+    const libraryFunctions = ''; // generateLibraryFunctions();
+    const programStatements = generateBlock(this.body);
     const target = `${libraryFunctions}${programStatements}`;
     return prettyJs(target, { indent: '  ' });
   },
@@ -199,9 +205,9 @@ Object.assign(StringLiteral.prototype, {
 });
 
 Object.assign(UnaryExpression.prototype, {
-  gen() { 
+  gen() {
     if(this.operand.constructor === NumericLiteral) {
-      return `(${makeOp(this.op)} ${this.operand.gen()})`; 
+      return `(${makeOp(this.op)} ${this.operand.gen()})`;
     } else {
       console.log("Error!");
     }
@@ -217,8 +223,8 @@ Object.assign(VariableDeclaration.prototype, {
 });
 
 Object.assign(Variable.prototype, {
-  gen() { 
-    return jsName(this); 
+  gen() {
+    return jsName(this);
   },
 });
 
@@ -241,7 +247,7 @@ Object.assign(WhileStatement.prototype, {
 
 
 /*
-/* eslint-disable no-unused-vars 
+/* eslint-disable no-unused-vars
 const astGenerator = grammar.createSemantics().addOperation('ast', {
   Program(_1, body, _2) {
     const p = new Program(body.ast());
@@ -385,7 +391,7 @@ const astGenerator = grammar.createSemantics().addOperation('ast', {
     return this.sourceString;
   },
 });
-/* eslint-enable no-unused-vars 
+/* eslint-enable no-unused-vars
 
 module.exports = (text) => {
   const match = grammar.match(text);
