@@ -17,7 +17,7 @@ Repo for Riley Persily, Thomas Ochsner, Simon Wroblewski, Kea Braekman, and Bret
 * Multiple names/ways to use basic operations
 * Type inference
 * String Interpolation
-* Simple loops (`for` and `while`)
+* Simple loop (`while`)
 * Semi-colon not required after every line
 
 ## Examples
@@ -41,7 +41,7 @@ y = 5 + 3 - 2                   y = 5 + 3 - 2
 if(x > 5):                      if(x > 5) {
 	print(x)		    console.log(x)
 else:                           } else {
-	print(z)		    console.log(z);
+	print(z)		    console.log(z)
 ;                               }
 ```
 
@@ -56,15 +56,13 @@ loopWhile(y < 8):           while(y < 8) {
 ### Functions 
 ```
 function multiplyByThree(x):        function multiplyByThree(x) {
-    return x * 3;                       return x*3
-                                    }
+    return x * 3                        return x*3
+;                                   }
 ```
 
 ### Comments
 ```
 -- single line					// single line
--* multiple					/* multiple
-   lines *-					lines */
 ```
 
 ### Objects
@@ -72,8 +70,8 @@ function multiplyByThree(x):        function multiplyByThree(x) {
 ```
 object Shape:                   let shape = {
     name: "circle"                 name: "circle",
-    radius: 3;                     radius: 3
-                                }
+    radius: 3                      radius: 3
+;                               }
     print(Shape.name)           console.log(Shape.name)
 
 ```
@@ -83,14 +81,18 @@ object Shape:                   let shape = {
 ```
 function piEstimate(precision):
     let inside = 0  // or inside gets 0
-    loop(precision):
-       let x = random(0,1)     //or x gets random(0,1)
+    counter = 0
+    loopWhile(precision notEquals counter):
+        let x = random(0,1)     //or x gets random(0,1)
         let y = random(0,1)     //or y gets random(0,1)
         if((x^2+y^2)^0.5 lessThan 1):   //or < 1
-            1 addedTo inside;
+            1 addedTo inside
+	;
+	counter = counter + 1
     ;
     let piEstimt = 4*inside/precision
-    return piEstimt;
+    return piEstimt
+;
 
     // This example program shows how one may mix word and traditional operations
 ```
@@ -104,7 +106,7 @@ function piEstimate(precision) {
         x = Math.random()
         y = Math.random()
         if (((x**2 + y**2)**0.5) < 1) {
-            inside++
+            inside = inside + 1
         }
     }
     return 4*inside / precision
@@ -137,8 +139,6 @@ greaterThan     >
 lessOrEq        <=
 
 greaterOrEq     >=
-
-remainder       %
 ```
 
 #### ChangeMaker Using Symbols
