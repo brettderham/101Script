@@ -30,7 +30,9 @@ const NumericLiteral = require('../ast/numeric-literal');
 const StringLiteral = require('../ast/string-literal');
 
 function makeOp(op) {
-  return { not: '!', and: 'and', or: 'or', '==': 'equals', '!=': 'notEqual' }[op] || op;
+  return {
+    not: '!', and: 'and', or: 'or', '==': 'equals', '!=': 'notEqual',
+  }[op] || op;
 }
 
 const jsName = (() => {
@@ -54,7 +56,7 @@ function generateLibraryFunctions() {
     return `function ${jsName(entity)}(${params}) {${body}}`;
   }
   return [
-    generateLibraryStub('print(_)', 'console.log(_);')
+    generateLibraryStub('print(_)', 'console.log(_);'),
   ].join('');
 }
 
@@ -64,7 +66,7 @@ function generateBlock(block) {
 
 module.exports = function (program) {
   return program.gen();
-}
+};
 
 Object.assign(Argument.prototype, {
   gen() { return this.expression.gen(); },
@@ -80,16 +82,15 @@ Object.assign(AssignmentStatement.prototype, {
 Object.assign(BinaryExpression.prototype, {
   gen() {
     console.log(this.left.constructor);
-    if(this.left.constructor === this.right.constructor) {
+    if (this.left.constructor === this.right.constructor) {
       return `(${this.left.gen()} ${makeOp(this.op)} ${this.right.gen()})`;
-    } else {
-      return "Error!";
     }
+    return 'Error!';
   },
 });
 
 Object.assign(Block.prototype, {
-  gen() {return this.statements.forEach() }
+  gen() { return this.statements.forEach(); },
 });
 
 Object.assign(BooleanLiteral.prototype, {
@@ -112,7 +113,7 @@ Object.assign(Call.prototype, {
 });
 
 Object.assign(ClassDeclaration.prototype, {
-   gen() { return this.function.gen(); },
+  gen() { return this.function.gen(); },
 });
 
 Object.assign(FunctionDeclaration.prototype, {
@@ -137,16 +138,15 @@ Object.assign(IdentifierExpression.prototype, {
 
 Object.assign(IfStatement.prototype, {
   gen() {
-    if (test.constructor === BooleanLiteral){
+    if (test.constructor === BooleanLiteral) {
       const cases = this.test.map((test, index) => {
-      const prefix = index === 0 ? 'if' : '} else if';
-      return `${prefix} (${test.gen()}) {${generateBlock(this.consequents[index])}`;
-    });
+        const prefix = index === 0 ? 'if' : '} else if';
+        return `${prefix} (${test.gen()}) {${generateBlock(this.consequents[index])}`;
+      });
       const alternate = this.alternate ? `}else{${generateBlock(this.alternate)}` : '';
       return `${cases.join('')}${alternate}}`;
-    } else {
-      console.log("Error!");
     }
+    console.log('Error!');
   },
 });
 
@@ -198,11 +198,10 @@ Object.assign(StringLiteral.prototype, {
 
 Object.assign(UnaryExpression.prototype, {
   gen() {
-    if(this.operand.constructor === NumericLiteral) {
+    if (this.operand.constructor === NumericLiteral) {
       return `(${makeOp(this.op)} ${this.operand.gen()})`;
-    } else {
-      console.log("Error!");
     }
+    console.log('Error!');
   },
 });
 
@@ -225,18 +224,10 @@ Object.assign(WhileStatement.prototype, {
   gen() {
     if (test.constructor === BooleanLiteral) {
       return `while (${this.test.gen()}) { ${generateBlock(this.body)} }`;
-    } else {
-      console.log("Error!");
     }
+    console.log('Error!');
   },
 });
-
-
-
-
-
-
-
 
 
 /*

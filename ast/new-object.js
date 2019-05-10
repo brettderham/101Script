@@ -1,4 +1,4 @@
-const Parameter = require("./parameter");
+const Parameter = require('./parameter');
 
 module.exports = class NewObject {
   constructor(id, params, body) {

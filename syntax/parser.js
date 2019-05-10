@@ -131,7 +131,7 @@ const astGenerator = grammar.createSemantics().addOperation('ast', {
     return new NewObject(id.ast(), params.ast());
   },
 
-  VarExp_field(v, _1, e,) {
+  VarExp_field(v, _1, e) {
     return new FieldExpression(v.ast(), e.ast());
   },
 

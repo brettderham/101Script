@@ -8,7 +8,7 @@
  *   const Context = require('./semantics/context');
  */
 
-const util = require('util')
+const util = require('util');
 const FunctionDeclaration = require('../ast/function-declaration');
 const NewObject = require('../ast/new-object');
 const Parameter = require('../ast/parameter');
@@ -60,10 +60,10 @@ class Context {
     if (id in this.declarations) {
       return this.declarations[id];
     } else if (this.parent === null) { // eslint-disable-line
-  //} else if (this.kind === (null)) {
+      // } else if (this.kind === (null)) {
       throw new Error(`Identifier ${util.format(id)} has not been declared`);
-    } else{
-    return this.parent.lookup(id);
+    } else {
+      return this.parent.lookup(id);
     }
   }
 
@@ -78,7 +78,7 @@ class Context {
     // console.log(`${entity} ` + entity);
     // console.log("NewObject " + NewObject);
     if (entity.constructor !== NewObject) {
-      console.log("ENTITY : " + entity);
+      console.log(`ENTITY : ${entity}`);
       throw new Error(`${entity.constructor} is not a function`);
     }
   }

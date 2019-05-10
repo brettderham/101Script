@@ -8,5 +8,5 @@ module.exports = class VariableDeclaration {
   analyze(context) {
     this.initializer.analyze(context);
     context.add(this);
-   }
+  }
 };

@@ -11,9 +11,6 @@ module.exports = class IfStatement {
     // }
     this.test.analyze(context);
     const testContext = context.createChildContextForLoop();
-    this.test.analyze(testContext);    
-    
-    
-  
+    this.test.analyze(testContext);
   }
 };
