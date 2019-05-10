@@ -1,3 +1,1 @@
-function addwrong():
-    let bad = "dog" + 3
-;
+2 + 5

@@ -119,9 +119,9 @@ Object.assign(Call.prototype, {
   },
 });
 
-// Object.assign(Class.prototype, {
-//   gen() {  }
-// });
+Object.assign(ClassDeclaration.prototype, {
+   gen() { return this.function.gen(); },
+});
 
 Object.assign(FunctionDeclaration.prototype, {
   gen() { return this.function.gen(); },
