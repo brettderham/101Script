@@ -1,0 +1,4 @@
+let i = 1
+loopWhile (i < 3):
+  i = i + 1
+;

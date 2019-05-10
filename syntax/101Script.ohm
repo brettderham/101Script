@@ -47,7 +47,7 @@ IOIScript {
   Args        =  ListOf<Arg, ";">
 
   keyword     =  ("loopWhile" | "if" | "else" | "else" | "function" | "return"
-              |  "break" | "and" | "or" | "not" | "true" | "false" |  "lessOrEq" | "lessThan"
+              |  "break" | "and" | "or" | "not"  |  "lessOrEq" | "lessThan"
               | "equals" | "notEqual" | "greaterOrEq" | "greaterThan" | "addedTo" | "multipliedTo"
               | "subtractedFrom" | "dividedFrom" | "gets" | "remainder" | "class" | "extends" | "object"
               | "let" | "const") ~idrest

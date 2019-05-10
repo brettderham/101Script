@@ -1,1 +1,3 @@
-dog = 5
+function foo():
+  return true
+;

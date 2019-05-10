@@ -44,9 +44,9 @@ const jsName = (() => {
   };
 })();
 
-function bracketIfNecessary(a) {
-  return (a.length === 1) ? `${a}` : `[${a.join(',')}]`;
-}
+// function bracketIfNecessary(a) {
+//   return (a.length === 1) ? `${a}` : `[${a.join(',')}]`;
+// }
 
 function generateLibraryFunctions() {
   function generateLibraryStub(name, params, body) {
@@ -59,7 +59,7 @@ function generateLibraryFunctions() {
 }
 
 function generateBlock(block) {
-  return block.statements.map(s => `${s.gen()};`).join('');
+  return block.statements;
 }
 
 module.exports = function (program) {
@@ -72,16 +72,8 @@ Object.assign(Argument.prototype, {
 
 Object.assign(AssignmentStatement.prototype, {
   gen() {
-    const targets = this.target.map(t => t.gen());
-    const sources = this.source.map(s => s.gen());
-    let firstVar= sources.values().next().value;
-    if (sources.length < 2) {
-      return `${bracketIfNecessary(targets)} = ${bracketIfNecessary(sources)}`;
-    } else if(sources.forEach(s => s.entries().next().value === firstVar.constructor)) {
-      return `${bracketIfNecessary(targets)} = ${bracketIfNecessary(sources)}`;
-    } else {
-      console.log("Error!");
-    }
+    const targets = this.target;
+    const sources = this.source;
   },
 });
 
@@ -145,8 +137,8 @@ Object.assign(IdentifierExpression.prototype, {
 
 Object.assign(IfStatement.prototype, {
   gen() {
-    if (cases.constructor === BooleanLiteral){
-      const cases = this.tests.map((test, index) => {
+    if (test.constructor === BooleanLiteral){
+      const cases = this.test.map((test, index) => {
       const prefix = index === 0 ? 'if' : '} else if';
       return `${prefix} (${test.gen()}) {${generateBlock(this.consequents[index])}`;
     });
@@ -216,9 +208,10 @@ Object.assign(UnaryExpression.prototype, {
 
 Object.assign(VariableDeclaration.prototype, {
   gen() {
-    const variables = this.variables.map(v => v.gen());
-    const initializers = this.initializers.map(i => i.gen());
-    return `let ${bracketIfNecessary(variables)} = ${bracketIfNecessary(initializers)}`;
+    console.log(this.id);
+    const variables = this.id;
+    const initializers = this.initializer;
+    return `let ${variables} = ${initializers}`;
   },
 });
 
@@ -230,7 +223,7 @@ Object.assign(Variable.prototype, {
 
 Object.assign(WhileStatement.prototype, {
   gen() {
-    if (cases.constructor === BooleanLiteral) {
+    if (test.constructor === BooleanLiteral) {
       return `while (${this.test.gen()}) { ${generateBlock(this.body)} }`;
     } else {
       console.log("Error!");

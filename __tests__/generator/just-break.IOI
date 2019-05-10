@@ -1,0 +1,3 @@
+loopWhile (true):
+  break
+;
