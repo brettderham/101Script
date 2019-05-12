@@ -1,4 +1,21 @@
 extends: airbnb-base
-{
-  "plugins": ["jest"]
-}
+plugins:
+  - import
+rules:
+  no-console:
+    off
+  import/no-dynamic-require:
+    off
+  import/no-extraneous-dependencies:
+    off
+  no-constant-condition:
+    off
+  no-restricted-syntax:
+    - error
+    - WithStatement
+  no-use-before-define:
+    - off
+  object-curly-newline:
+    - off
+env:
+  jest: true

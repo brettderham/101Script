@@ -1,5 +1,5 @@
 TN:
-SF:/Users/brettderham/101Script/101.js
+SF:/Users/keabraekman/Documents/LMU/CMSI 488/101Script/101.js
 FN:34,compile
 FN:51,compileFile
 FN:52,(anonymous_2)
@@ -48,7 +48,7 @@ BRF:10
 BRH:4
 end_of_record
 TN:
-SF:/Users/brettderham/101Script/ast/argument.js
+SF:/Users/keabraekman/Documents/LMU/CMSI 488/101Script/ast/argument.js
 FN:2,(anonymous_0)
 FN:6,(anonymous_1)
 FNF:2
@@ -64,7 +64,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/brettderham/101Script/ast/assignment-statement.js
+SF:/Users/keabraekman/Documents/LMU/CMSI 488/101Script/ast/assignment-statement.js
 FN:2,(anonymous_0)
 FN:6,(anonymous_1)
 FNF:2
@@ -81,7 +81,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/brettderham/101Script/ast/binary-expression.js
+SF:/Users/keabraekman/Documents/LMU/CMSI 488/101Script/ast/binary-expression.js
 FN:6,(anonymous_0)
 FN:11,(anonymous_1)
 FNF:2
@@ -136,7 +136,7 @@ BRF:26
 BRH:24
 end_of_record
 TN:
-SF:/Users/brettderham/101Script/ast/block.js
+SF:/Users/keabraekman/Documents/LMU/CMSI 488/101Script/ast/block.js
 FN:4,(anonymous_0)
 FN:5,(anonymous_1)
 FN:8,(anonymous_2)
@@ -156,7 +156,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/brettderham/101Script/ast/boolean-literal.js
+SF:/Users/keabraekman/Documents/LMU/CMSI 488/101Script/ast/boolean-literal.js
 FN:2,(anonymous_0)
 FN:6,(anonymous_1)
 FNF:2
@@ -171,7 +171,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/brettderham/101Script/ast/break-statement.js
+SF:/Users/keabraekman/Documents/LMU/CMSI 488/101Script/ast/break-statement.js
 FN:3,(anonymous_0)
 FNF:1
 FNH:1
@@ -187,7 +187,7 @@ BRF:2
 BRH:2
 end_of_record
 TN:
-SF:/Users/brettderham/101Script/ast/call-expression.js
+SF:/Users/keabraekman/Documents/LMU/CMSI 488/101Script/ast/call-expression.js
 FN:2,(anonymous_0)
 FN:6,(anonymous_1)
 FN:10,(anonymous_2)
@@ -207,7 +207,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/brettderham/101Script/ast/call-statement.js
+SF:/Users/keabraekman/Documents/LMU/CMSI 488/101Script/ast/call-statement.js
 FN:2,(anonymous_0)
 FN:6,(anonymous_1)
 FNF:2
@@ -223,7 +223,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/brettderham/101Script/ast/class-declaration.js
+SF:/Users/keabraekman/Documents/LMU/CMSI 488/101Script/ast/class-declaration.js
 FN:4,(anonymous_0)
 FN:7,(anonymous_1)
 FNF:2
@@ -241,7 +241,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/brettderham/101Script/ast/field-expression.js
+SF:/Users/keabraekman/Documents/LMU/CMSI 488/101Script/ast/field-expression.js
 FN:2,(anonymous_0)
 FN:6,(anonymous_1)
 FNF:2
@@ -256,7 +256,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/brettderham/101Script/ast/field.js
+SF:/Users/keabraekman/Documents/LMU/CMSI 488/101Script/ast/field.js
 FN:2,(anonymous_0)
 FN:6,(anonymous_1)
 FNF:2
@@ -272,7 +272,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/brettderham/101Script/ast/function-declaration.js
+SF:/Users/keabraekman/Documents/LMU/CMSI 488/101Script/ast/function-declaration.js
 FN:4,(anonymous_0)
 FN:11,(anonymous_1)
 FNF:2
@@ -292,7 +292,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/brettderham/101Script/ast/identifier-expression.js
+SF:/Users/keabraekman/Documents/LMU/CMSI 488/101Script/ast/identifier-expression.js
 FN:2,(anonymous_0)
 FN:6,(anonymous_1)
 FNF:2
@@ -308,7 +308,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/brettderham/101Script/ast/if-statement.js
+SF:/Users/keabraekman/Documents/LMU/CMSI 488/101Script/ast/if-statement.js
 FN:2,(anonymous_0)
 FN:7,(anonymous_1)
 FNF:2
@@ -326,7 +326,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/brettderham/101Script/ast/list-expression.js
+SF:/Users/keabraekman/Documents/LMU/CMSI 488/101Script/ast/list-expression.js
 FN:2,(anonymous_0)
 FN:6,(anonymous_1)
 FN:7,(anonymous_2)
@@ -344,7 +344,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/brettderham/101Script/ast/new-object.js
+SF:/Users/keabraekman/Documents/LMU/CMSI 488/101Script/ast/new-object.js
 FN:4,(anonymous_0)
 FN:9,(anonymous_1)
 FN:13,(anonymous_2)
@@ -375,7 +375,7 @@ BRF:2
 BRH:2
 end_of_record
 TN:
-SF:/Users/brettderham/101Script/ast/numeric-literal.js
+SF:/Users/keabraekman/Documents/LMU/CMSI 488/101Script/ast/numeric-literal.js
 FN:2,(anonymous_0)
 FN:6,(anonymous_1)
 FNF:2
@@ -390,7 +390,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/brettderham/101Script/ast/parameter.js
+SF:/Users/keabraekman/Documents/LMU/CMSI 488/101Script/ast/parameter.js
 FN:2,(anonymous_0)
 FN:6,(anonymous_1)
 FNF:2
@@ -406,7 +406,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/brettderham/101Script/ast/program.js
+SF:/Users/keabraekman/Documents/LMU/CMSI 488/101Script/ast/program.js
 FN:4,(anonymous_0)
 FN:8,(anonymous_1)
 FNF:2
@@ -424,7 +424,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/brettderham/101Script/ast/return-statement.js
+SF:/Users/keabraekman/Documents/LMU/CMSI 488/101Script/ast/return-statement.js
 FN:2,(anonymous_0)
 FN:6,(anonymous_1)
 FNF:2
@@ -444,7 +444,7 @@ BRF:2
 BRH:1
 end_of_record
 TN:
-SF:/Users/brettderham/101Script/ast/string-literal.js
+SF:/Users/keabraekman/Documents/LMU/CMSI 488/101Script/ast/string-literal.js
 FN:2,(anonymous_0)
 FN:6,(anonymous_1)
 FNF:2
@@ -459,7 +459,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/brettderham/101Script/ast/unary-expression.js
+SF:/Users/keabraekman/Documents/LMU/CMSI 488/101Script/ast/unary-expression.js
 FN:2,(anonymous_0)
 FN:6,(anonymous_1)
 FNF:2
@@ -475,7 +475,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/brettderham/101Script/ast/variable-declaration.js
+SF:/Users/keabraekman/Documents/LMU/CMSI 488/101Script/ast/variable-declaration.js
 FN:2,(anonymous_0)
 FN:6,(anonymous_1)
 FNF:2
@@ -492,7 +492,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/brettderham/101Script/ast/variable.js
+SF:/Users/keabraekman/Documents/LMU/CMSI 488/101Script/ast/variable.js
 FN:2,(anonymous_0)
 FN:6,(anonymous_1)
 FNF:2
@@ -507,7 +507,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/brettderham/101Script/ast/while-statement.js
+SF:/Users/keabraekman/Documents/LMU/CMSI 488/101Script/ast/while-statement.js
 FN:2,(anonymous_0)
 FN:6,(anonymous_1)
 FNF:2
@@ -525,7 +525,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/brettderham/101Script/backend/javascript-generator.js
+SF:/Users/keabraekman/Documents/LMU/CMSI 488/101Script/backend/javascript-generator.js
 FN:31,makeOp
 FN:37,(anonymous_1)
 FN:40,(anonymous_2)
@@ -747,7 +747,7 @@ BRF:24
 BRH:0
 end_of_record
 TN:
-SF:/Users/brettderham/101Script/semantics/context.js
+SF:/Users/keabraekman/Documents/LMU/CMSI 488/101Script/semantics/context.js
 FN:17,(anonymous_0)
 FN:24,(anonymous_1)
 FN:29,(anonymous_2)
@@ -812,7 +812,7 @@ BRF:16
 BRH:14
 end_of_record
 TN:
-SF:/Users/brettderham/101Script/syntax/parser.js
+SF:/Users/keabraekman/Documents/LMU/CMSI 488/101Script/syntax/parser.js
 FN:34,unpack
 FN:38,arrayToNullable
 FN:44,(anonymous_2)
