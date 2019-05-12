@@ -8,7 +8,7 @@ module.exports = class VariableDeclaration {
     context.add(this);
   }
 
-  optimize() {
-    return this;
-  }
+  // optimize() {
+  //   return this;
+  // }
 };

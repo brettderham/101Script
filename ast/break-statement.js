@@ -6,7 +6,7 @@ module.exports = class BreakStatement {
     }
   }
 
-  optimize() {
-    return this;
-  }
+  // optimize() {
+  //   return this;
+  // }
 };
