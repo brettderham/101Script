@@ -1,20 +1,21 @@
 const prettyJs = require('pretty-js');
 
-const Context = require('../semantics/context');
+// NEVER USED : uncomment if necessary
+// const Context = require('../semantics/context');
 const Program = require('../ast/program');
 const Block = require('../ast/block');
 const VariableDeclaration = require('../ast/variable-declaration');
 const ClassDeclaration = require('../ast/class-declaration');
 const AssignmentStatement = require('../ast/assignment-statement');
 const BreakStatement = require('../ast/break-statement');
-const FieldExpression = require('../ast/field-expression');
+// const FieldExpression = require('../ast/field-expression');
 const ReturnStatement = require('../ast/return-statement');
 const IfStatement = require('../ast/if-statement');
 const WhileStatement = require('../ast/while-statement');
-const CallStatement = require('../ast/call-statement');
+// const CallStatement = require('../ast/call-statement');
 const FunctionDeclaration = require('../ast/function-declaration');
 const FunctionObject = require('../ast/new-object');
-const NewObject = require('../ast/new-object');
+// const NewObject = require('../ast/new-object');
 const ListExpression = require('../ast/list-expression');
 const BinaryExpression = require('../ast/binary-expression');
 const UnaryExpression = require('../ast/unary-expression');
@@ -49,15 +50,17 @@ const jsName = (() => {
 //   return (a.length === 1) ? `${a}` : `[${a.join(',')}]`;
 // }
 
-function generateLibraryFunctions() {
-  function generateLibraryStub(name, params, body) {
-    const entity = Context.INITIAL.declarations[name];
-    return `function ${jsName(entity)}(${params}) {${body}}`;
-  }
-  return [
-    generateLibraryStub('print(_)', 'console.log(_);'),
-  ].join('');
-}
+
+// NEVER USED : uncomment if necessary
+// function generateLibraryFunctions() {
+//   function generateLibraryStub(name, params, body) {
+//     const entity = Context.INITIAL.declarations[name];
+//     return `function ${jsName(entity)}(${params}) {${body}}`;
+//   }
+//   return [
+//     generateLibraryStub('print(_)', 'console.log(_);'),
+//   ].join('');
+// }
 
 function generateBlock(block) {
   return block.statements;
@@ -73,8 +76,9 @@ Object.assign(Argument.prototype, {
 
 Object.assign(AssignmentStatement.prototype, {
   gen() {
-    const targets = this.target;
-    const sources = this.source;
+    // NEVER USED : uncomment if necessary
+    // const targets = this.target;
+    // const sources = this.source;
   },
 });
 
