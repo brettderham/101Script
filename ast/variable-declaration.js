@@ -9,4 +9,8 @@ module.exports = class VariableDeclaration {
     this.initializer.analyze(context);
     context.add(this);
   }
+
+  optimize() {
+    return this;
+  }
 };

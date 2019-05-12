@@ -5,4 +5,8 @@ module.exports = class BreakStatement {
       throw new Error('Break statement outside loop');
     }
   }
+
+  optimize() {
+    return this;
+  }
 };

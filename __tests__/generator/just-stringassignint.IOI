@@ -1,0 +1,5 @@
+function typeTest():
+    let x = "dog"
+    x = 3
+    return x
+;

@@ -1,3 +1,5 @@
-function multiplyByThree(x):
-    return x * -3
+function multiplyByThree():
+    let y = 1
+    let x = 3 * y
+    return x
 ;

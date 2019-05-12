@@ -9,4 +9,11 @@ module.exports = class ReturnStatement {
       this.returnValue.analyze(context);
     }
   }
+
+  optimize() {
+    if (this.returnValue) {
+      this.returnValue = this.returnValue.optimize();
+    }
+    return this;
+  }
 };
