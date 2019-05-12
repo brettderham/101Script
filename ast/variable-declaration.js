@@ -1,5 +1,3 @@
-const Variable = require('./variable');
-
 module.exports = class VariableDeclaration {
   constructor(kind, id, initializer) {
     Object.assign(this, { kind, id, initializer });
