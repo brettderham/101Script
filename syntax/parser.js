@@ -22,7 +22,7 @@ const IdentifierExpression = require('../ast/identifier-expression');
 const Call = require('../ast/call-expression');
 const Parameter = require('../ast/parameter');
 const Field = require('../ast/field');
-const Method = require('../ast/method');
+
 const Argument = require('../ast/argument');
 const BooleanLiteral = require('../ast/boolean-literal');
 const NumericLiteral = require('../ast/numeric-literal');
@@ -145,10 +145,6 @@ const astGenerator = grammar.createSemantics().addOperation('ast', {
 
   Field(id, _, exp) {
     return new Field(id.ast(), exp.ast());
-  },
-
-  Method(id, _1, params, _2, _3, body, _4) {
-    return new Method(id.ast(), params.ast(), body.ast());
   },
 
   Arg(id, _, exp) {

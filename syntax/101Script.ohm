@@ -33,8 +33,8 @@ IOIScript {
               |  NewObject
   Call        =  VarExp "(" Args ")"
 
-  ClassDecl   =  "class" id ("extends" id)? ":" (Field | Method | newline)+ ";"   -- class
-  NewObject   =  "object" id ":" (Field | Method | newline)+ ";"                  -- object
+  ClassDecl   =  "class" id ("extends" id)? ":" (Field | newline)+ ";"   -- class
+  NewObject   =  "object" id ":" (Field | newline)+ ";"                  -- object
   VarExp      =  VarExp "[" Exp "]"                      -- subscripted
               |  VarExp "." id                           -- field
               |  id                                      -- simple
@@ -42,7 +42,6 @@ IOIScript {
   Param       =  id ("=" Exp)?
   Params      =  ListOf<Param, ",">
   Field       =  id ":" Exp
-  Method      =  id "(" Params ")" ":" Block ";"
   Arg         =  ((id ":")? Exp)
   Args        =  ListOf<Arg, ";">
 
