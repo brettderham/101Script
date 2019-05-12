@@ -10,10 +10,10 @@ module.exports = class ReturnStatement {
     }
   }
 
-  // optimize() {
-  //   if (this.returnValue) {
-  //     this.returnValue = this.returnValue.optimize();
-  //   }
-  //   return this;
-  // }
+  optimize() {
+    if (this.returnValue) {
+      this.returnValue = this.returnValue.optimize();
+    }
+    return this;
+  }
 };

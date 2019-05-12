@@ -38,9 +38,9 @@ module.exports = class BinaryExpression {
     }
   }
 
-  // optimize() {
-  //   this.left = this.left.optimize();
-  //   this.right = this.right.optimize();
-  //   return this;
-  // }
+  optimize() {
+    this.left = this.left.optimize();
+    this.right = this.right.optimize();
+    return this;
+  }
 };

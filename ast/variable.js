@@ -6,7 +6,7 @@ module.exports = class Variable {
   analyze(/* context */) { // eslint-disable-line class-methods-use-this
   }
 
-  // optimize() {
-  //   return this;
-  // }
+  optimize() {
+    return this;
+  }
 };
